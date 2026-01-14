@@ -1,0 +1,14 @@
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\bin\Debug\net8.0\MISA.Fresher.Core.exe
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\bin\Debug\net8.0\MISA.Fresher.Core.deps.json
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\bin\Debug\net8.0\MISA.Fresher.Core.runtimeconfig.json
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\bin\Debug\net8.0\MISA.Fresher.Core.dll
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\bin\Debug\net8.0\MISA.Fresher.Core.pdb
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\MISA.Fresher.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\MISA.Fresher.Core.AssemblyInfoInputs.cache
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\MISA.Fresher.Core.AssemblyInfo.cs
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\MISA.Fresher.Core.csproj.CoreCompileInputs.cache
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\MISA.Fresher.Core.dll
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\refint\MISA.Fresher.Core.dll
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\MISA.Fresher.Core.pdb
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\MISA.Fresher.Core.genruntimeconfig.cache
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\ref\MISA.Fresher.Core.dll

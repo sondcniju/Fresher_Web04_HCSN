@@ -1,0 +1,6 @@
+@WebEnd_HostAddress = http://localhost:5037
+
+GET {{WebEnd_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

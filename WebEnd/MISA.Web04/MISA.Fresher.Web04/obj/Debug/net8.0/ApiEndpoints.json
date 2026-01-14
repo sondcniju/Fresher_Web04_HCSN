@@ -1,0 +1,103 @@
+[
+  {
+    "ContainingType": "MISA.Fresher.Web04.Api.Controllers.FixedAssetController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/v1/fixed-assets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MISA.Fresher.Web04.Api.Controllers.FixedAssetController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/v1/fixed-assets",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fixedAsset",
+        "Type": "MISA.Fresher.Core.Enities.FixedAsset",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MISA.Fresher.Web04.Api.Controllers.FixedAssetController",
+    "Method": "GetByIdAsync",
+    "RelativePath": "api/v1/fixed-assets/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetFixedAssetById"
+  },
+  {
+    "ContainingType": "MISA.Fresher.Web04.Api.Controllers.FixedAssetController",
+    "Method": "UpdateAsync",
+    "RelativePath": "api/v1/fixed-assets/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "fixedAsset",
+        "Type": "MISA.Fresher.Core.Enities.FixedAsset",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MISA.Fresher.Web04.Api.Controllers.FixedAssetController",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/v1/fixed-assets/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MISA.Fresher.Web04.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MISA.Fresher.Web04.WeatherForecast, MISA.Fresher.Web04.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]
