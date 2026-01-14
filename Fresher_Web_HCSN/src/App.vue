@@ -1,6 +1,7 @@
 <template>
   <div class="app">
-    <div class="app-sidebar"> <AppSidebar />
+    <div class="app-sidebar">
+      <AppSidebar />
     </div>
    
     <div class="app-body">
@@ -11,9 +12,8 @@
 </template>
 
 <script setup>
-import AppHeader from './components/layout/AppHeader.vue';
-import AppSidebar from './components/layout/AppSidebar.vue';
-
+import AppHeader from './components/layout/AppHeader.vue'
+import AppSidebar from './components/layout/AppSidebar.vue'
 </script>
 <style scoped>
     .app {
@@ -21,7 +21,6 @@ import AppSidebar from './components/layout/AppSidebar.vue';
         min-height: 100vh;
         overflow: hidden;
         display: flex;
-        gap: 20px;
     }
     .app-sidebar {
         display: flex;
@@ -31,7 +30,7 @@ import AppSidebar from './components/layout/AppSidebar.vue';
         display: flex;
         flex-direction: column;
         flex: 1;
-        width: 100%;
+        min-width: 0;
         height: 100%;
     }
 </style>

@@ -1,4 +1,4 @@
-import AssetListPage from '@/views/assets/AssetListPage.vue'
+import AssetListView from '@/views/assets/AssetListView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'assets',
-      component: AssetListPage,
+      component: AssetListView,
     },
     // {
     //   path: '/about',

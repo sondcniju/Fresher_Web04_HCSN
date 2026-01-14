@@ -1,362 +1,331 @@
-<script setup>
-import { ref, computed } from "vue"
+﻿<script setup>
+// MÃ´ táº£: Sidebar máº·c Ä‘á»‹nh má»Ÿ rá»™ng, báº¥m Ä‘á»ƒ thu gá»n chá»‰ cÃ²n icon (giá»‘ng UI MISA QLTS)
+// NgÃ y táº¡o: 2026-01-13
+import { computed, ref } from "vue"
+
+// Enum key menu (demo)
+// NgÃ y táº¡o enum: 2026-01-13
+const SidebarKey = Object.freeze({
+  Overview: "overview",
+  Asset: "asset",
+  AssetHTDB: "asset_htdb",
+  Tools: "tools",
+  Category: "category",
+  Lookup: "lookup",
+  Report: "report",
+})
+
+const activeKey = ref(SidebarKey.Asset)
+
 
 const isCollapsed = ref(false)
-const activeKey = ref("recruitment")
-const navItems = [
-  { key: "recruitment", label: "Tổng quan", icon: "icon-sb-recrument" },
-  { key: "candidate", label: "Tài sản", icon: "icon-candidate" },
-  { key: "calendar", label: "Tài sản HT-DB", icon: "icon-calendar" },
-  { key: "talent-pool", label: "Công cụ dụng cụ", icon: "icon-storage" },
-  { key: "campaign", label: "Danh mục", icon: "icon-marketing" },
-  { key: "job", label: "Tra cứu", icon: "icon-job" },
-  { key: "ai-marketing", label: "Báo cáo", icon: "icon-aimarketing" },
-]
-const toggleText = computed(() => (isCollapsed.value ? "Mở rộng" : "Thu gọn"))
 
-const toggleSidebar = () => {
+
+const items = computed(() => [
+  { key: SidebarKey.Overview, title: "Tổng quan", icon: "overview", hasChildren: false },
+  { key: SidebarKey.Asset, title: "Tài sản", icon: "asset", hasChildren: true },
+  { key: SidebarKey.AssetHTDB, title: "Tài sản HT-ĐB", icon: "flask", hasChildren: true },
+  { key: SidebarKey.Tools, title: "Công cụ dụng cụ", icon: "tools", hasChildren: true },
+  { key: SidebarKey.Category, title: "Danh mục", icon: "category", hasChildren: false },
+  { key: SidebarKey.Lookup, title: "Tra cứu", icon: "search", hasChildren: true },
+  { key: SidebarKey.Report, title: "Báo cáo", icon: "report", hasChildren: true },
+])
+
+function setActive(key) {
+  activeKey.value = key
+}
+
+// Toggle thu gọn/mở rộng
+function toggleSidebar() {
   isCollapsed.value = !isCollapsed.value
 }
 </script>
 
 <template>
-    <div class="sidebar-image">
-        <div class="sidebar-title">MISA QLTS</div>
-      <div class="sidebar-inner">
-        <nav class="sidebar-menu display-flex flex-direction-column">
-          <a v-for="item in navItems" :key="item.key" class="nav-item"
-            :class="{ active: activeKey === item.key }" @click="activeKey = item.key">
-            <span class="icon" :class="item.icon"></span>
-            <span class="label">{{ item.label }}</span>
-          </a>
-          <div class="sidebar-footer">
-            <button
-              class="collapse-btn sidebar-collapse-btn"
-              type="button"
-              id="collapseBtn"
-              :aria-pressed="isCollapsed"
-              @click="toggleSidebar"
-            >
-              <span class="icon icon-shorten collape-main-icon"></span>
-              <span class="label-btn collapse-label">{{ toggleText }}</span>
-            </button>
-          </div>
-        </nav>
+  <aside class="sidebar" :class="{ collapsed: isCollapsed }">
+    <!-- Header logo + brand -->
+    <div class="sidebar-top">
+      <div class="brand">
+        <div class="icon icon-brand">
+        </div>
+
+        <!-- Text brand -->
+        <div v-if="!isCollapsed" class="brand-text">
+          <div class="brand-name">MISA QLTS</div>
+        </div>
       </div>
     </div>
+
+    <!-- Menu -->
+    <nav class="nav">
+      <button
+        v-for="it in items"
+        :key="it.key"
+        type="button"
+        class="nav-item"
+        :class="{ active: it.key === activeKey }"
+        :title="it.title"
+        @click="setActive(it.key)"
+      >
+        <span class="active-bar" aria-hidden="true"></span>
+
+        <!-- Icon (sprite) -->
+        <span class="icon" :class="`icon-${it.icon}`" aria-hidden="true"></span>
+
+        <!-- Text (icon khi collapsed) -->
+        <span v-if="!isCollapsed" class="text">{{ it.title }}</span>
+
+        <span v-if="!isCollapsed && it.hasChildren" class="caret" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7Z" /></svg>
+        </span>
+      </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <button class="collapse-btn" type="button" :title="isCollapsed ? 'Mở rộng' : 'Thu gọn'" @click="toggleSidebar">
+        <svg viewBox="0 0 24 24" aria-hidden="true" :class="{ rotate: isCollapsed }">
+          <path d="M15 18 9 12l6-6" />
+        </svg>
+      </button>
+    </div>
+  </aside>
 </template>
 
 <style scoped>
-  /* Sidebar token */
-:root {
-    --sidebar-w: 233px;
-    --sidebar-collapsed-w: 72px;
-}
-
-/* Sidebar wrapper */
+/* ============ Layout chung ============ */
 .sidebar {
-    height: 100vh;
-    min-width: var(--sidebar-w);
-    width: var(--sidebar-w);
-    color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    overflow: hidden;
+  width: 240px;
+  height: 100%;
+  background: #1f3b57;
+  color: #cfe1f1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Sidebar overlay */
-.sidebar-inner {
-    height: calc(100% + 48px);
-    width: 100%;
-    padding-top: 32px;
-    padding-bottom: 16px;
+.sidebar.collapsed {
+  width: 66px; 
+  padding: 10px 8px;
 }
 
-/* Sidebar background carrier */
-.sidebar-image {
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #051529; 
-    height: calc(100% + 48px);
-    width: 100%;
+/* ============ Top / Brand ============ */
+.sidebar-top {
+  padding: 2px 0 10px;
 }
 
-.sidebar-title {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    color: #FFFFFF;
-    padding-left: 16px;
-    margin-bottom: 24px;
+.brand {
+  display: flex;
+  align-items: center;
 }
 
-/* Sidebar menu container */
-.sidebar .sidebar-inner .sidebar-menu {
-    color: #c5ccd5;
-    border-radius: 4px;
-    margin-top: unset;
+
+
+.brand-text .brand-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
 }
-.sidebar-item{
-    font-weight: 500;
-    position: relative;
-    font-size: 14px;
+
+/* ============ Nav ============ */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 6px;
 }
-.item-content{
-    color: #c5ccd5;
-    border-radius: 4px;
-    padding: 8px 12px;
-    margin: 12px;
-    margin-top: unset;
-}
-/* Menu item */
+
 .nav-item {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    min-width: 209px;
-    gap: 12px;
-    margin: 0 12px 12px;
-    padding: 8px 12px;
-    border-radius: 6px;
-    color: #d8dce3;
-    text-decoration: none;
-    cursor: pointer;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 14px;
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px 0 14px;
+  position: relative;
+  color: inherit;
 }
 
-/* Menu item icon */
-.nav-item .icon {
-    filter: brightness(0) invert(1);
-    display: inline-block;
-}
-
-/* Hover va active item */
 .nav-item:hover {
-    background: rgba(255, 255, 255, 0.16);
-    color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-item .active-bar {
+  position: absolute;
+  left: 0;
+  width: 6px;
+  height: 18px;
+  border-radius: 6px;
+  background: transparent;
 }
 
 .nav-item.active {
-    background: var(--primary);
-    color: #fff;
+  background: #2bb5ff;
+  color: #ffffff;
+}
+
+.nav-item.active .active-bar {
+  background: #2bb5ff;
+}
+
+.nav-item.active .icon {
+  filter: brightness(0) invert(1);
+}
+/* Icon */
+.icon{
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  background: url(/src/assets/icons/qlts-icon.svg);
+  background-repeat: no-repeat;
+}
+
+.icon-brand {
+  background-position:  -20px -680px;
+	width: 36px;
+	height: 36px;
+  display: flex;
+  align-self: center;
+}
+.icon-overview {
+  background-position:  -21px -153px;
+  width: 22px;
+	height: 22px;
+}
+.icon-asset {
+  background-position: -65px -153px;
+	width: 22px;
+	height: 23px;
+}
+.icon-flask {
+  background-position:  -110px -153px;
+	width: 21px;
+	height: 23px;
+}
+.icon-tools {
+  background-position:  -153px -153px;
+	width: 22px;
+	height: 22px;
+}
+.icon-category {
+  background-position: -197px -155px;
+	width: 22px;
+	height: 18px;
+} 
+.icon-search {
+  background-position:  -241px -153px;
+	width: 22px;
+	height: 22px;
+}
+.icon-report {
+  background-position:  -329px -153px;
+	width: 22px;
+	height: 22px;
+}
+
+.text {
+  flex: 1;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.caret {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}
+.caret svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* ============ Khi collapsed: chỉ icon ============ */
+.sidebar.collapsed .nav-item {
+  width: 44px;
+  padding: 0;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 
 
-/* Nhan item dung elip khi collapse */
-.nav-item .label {
-    flex: 1;
-    min-width: 0;
+/* Center brand icon when collapsed */
+.sidebar.collapsed .sidebar-top {
+  display: flex;
+  justify-content: center;
 }
 
-/* Sidebar footer va nut collapse */
-.sidebar-footer {
-    position: absolute;
-    bottom: 16px;
-    padding: 0 12px;
+.sidebar.collapsed .brand {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .sidebar.collapsed {
+    width: 100%;
+  }
+}
+
+/* ============ Bottom toggle ============ */
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sidebar.collapsed .sidebar-bottom {
+  justify-content: center;
 }
 
 .collapse-btn {
-    border: 1px solid white;
-    color: #fff;
-    cursor: pointer;
-    height: 40px;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    min-width: 209px;
-    gap: 10px;
-}
-
-.collapse-btn.label-btn{
-    font-weight: 500;
-    margin-left: 12px;
-    font-size: 14px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .collapse-btn:hover {
-    background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.collapse-btn .chev {
-    font-size: 18px;
-    line-height: 1;
+.collapse-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.collapse-caret {
-    display: inline-block;
-    transition: transform 0.2s ease;
-}
-
-.collape-main-icon {
-    display: inline-block;
-}
-
-/* Trang thai collapsed */
-.sidebar.collapsed {
-    width: var(--sidebar-collapsed-w);
-    min-width: var(--sidebar-collapsed-w);
-}
-
-.sidebar.collapsed .sidebar-image,
-.sidebar.collapsed .sidebar-inner {
-    width: var(--sidebar-collapsed-w);
-}
-
-/* An label trong collapsed */
-.sidebar.collapsed .nav-item .label ,.sidebar.collapsed .label-btn{
-    display: none;
-}
-
-/* An text dropdown khi collapsed */
-.sidebar.collapsed .nav-dropdown-toggle span:not(.icon) {
-    display: none;
-}
-
-/* Active trong collapsed giu pill xanh */
-.sidebar.collapsed .nav-item.active {
-    background: var(--primary);
-}
-
-/* Footer button chi con icon */
-.sidebar.collapsed .collapse-btn {
-    height: 40px;
-    width: 48px;
-    min-width: 48px;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 8px;
-}
-
-.sidebar.collapsed .collape-main-icon {
-    transform: rotate(180deg);
-}
-
-/* An caret dropdown khi collapsed */
-.sidebar.collapsed .nav-dropdown-toggle .caret {
-    display: none;
-}
-
-/* Icon trong collapsed giu canh */
-.sidebar.collapsed .nav-item .icon {
-    display: inline-block !important;
-    margin: 0 !important;
-}
-
-.nav-submenu {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.nav-submenu .nav-item {
-    padding-left: 28px;
-}
-
-.nav-submenu.is-collapsed {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.25s ease, opacity 0.25s ease;
-}
-
-.nav-submenu.is-open {
-    max-height: 400px;
-    opacity: 1;
-}
-
-.collapse-label {
-    font-family: Inter;
-    color: #fff !important;
-    font-weight: 500;
-    margin-left: 12px;
-    font-size: 14px;
-}
-
-.sidebar-collapse-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    border: 1px solid #fff;
-    background: rgba(255, 255, 255, 0.1);
-    color: #d8dce3;
-    padding: 10px 12px;
-    cursor: pointer;
-    margin-top: auto;
-}
-
-.sidebar-collapse-btn .collapse-caret {
-    margin-left: auto;
-    display: none;
-    transform: rotate(0deg);
-    transition: transform 0.2s ease;
-}
-
-.sidebar-collapse-btn .icon {
-    filter: brightness(0) invert(1);
-}
-
-.sidebar.collapsed {
-    width: var(--sidebar-collapsed-w);
-    min-width: var(--sidebar-collapsed-w);
-}
-
-.sidebar.collapsed .sidebar-inner {
-    padding-top: 32px;
-    padding-bottom: 16px;
-}
-
-.sidebar.collapsed .nav-item,
-.sidebar.collapsed .nav-dropdown-toggle {
-    justify-content: center;
-    gap: 0;
-    margin: 12px;
-    padding: 8px 12px;
-    margin-top: unset;
-    width: auto;
-    min-width: 0;
-}
-
-.sidebar.collapsed .nav-item span:not(.icon),
-.sidebar.collapsed .nav-dropdown-toggle span:not(.icon) {
-    display: none;
-}
-
-.sidebar.collapsed .nav-dropdown-toggle .caret {
-    display: none;
-}
-
-.sidebar.collapsed .sidebar-collapse-btn {
-    justify-content: center;
-    width: 48px;
-    height: 40px;
-    padding: 8px;
-}
-
-.sidebar.collapsed .sidebar-collapse-btn .collapse-label {
-    display: none;
-}
-
-.sidebar.collapsed .sidebar-collapse-btn .collapse-main-icon {
-    display: none;
-}
-
-.sidebar.collapsed .sidebar-collapse-btn .collapse-caret {
-    display: inline-block;
-    margin-left: 0;
-    transform: rotate(180deg);
-    font-size: 18px;
-    line-height: 1;
-    color: #fff;
+.collapse-btn svg.rotate {
+  transform: rotate(180deg);
 }
 </style>
+
