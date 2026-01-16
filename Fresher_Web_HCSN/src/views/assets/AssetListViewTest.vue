@@ -256,7 +256,6 @@ onMounted(async () => {
 </script>
 
 <template>
-   <!-- tạo context menu để bám chuột phải ra thêm sửa xóa -->
   <section class="page">
     <!-- Filters + actions -->
     <div class="toolbar">

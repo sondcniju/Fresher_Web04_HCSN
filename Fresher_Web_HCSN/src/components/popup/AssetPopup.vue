@@ -31,6 +31,45 @@ const form = reactive({
   fixedAssetDepreciationValueYear: 0,
 })
 
+// Mô tả: Tự động tính "Giá trị hao mòn năm" = Nguyên giá * Tỷ lệ hao mòn / 100
+// Ngày tạo: 2026-01-16
+function recalcDepreciationValueYear() {
+  const cost = Number(form.fixedAssetCost) || 0
+  const rate = Number(form.fixedAssetDepreciationRate) || 0
+  const value = (cost * rate) / 100
+
+  // Tiền VNĐ thường hiển thị số nguyên
+  form.fixedAssetDepreciationValueYear = Math.round(value)
+}
+// Mô tả: Map nhanh id -> name/code cho bộ phận và loại tài sản
+// Ngày tạo: 2026-01-15
+
+const departmentMap = computed(() => {
+  const byId = {}
+  for (const d of props.departments || []) {
+    // backend bạn đang dùng key fixedAssetDepartmentId / fixedAssetDepartmentName / fixedAssetDepartmentCode
+    const id = d.fixedAssetDepartmentId ?? d.id
+    byId[id] = {
+      name: d.fixedAssetDepartmentName ?? d.name ?? "",
+      code: d.fixedAssetDepartmentCode ?? d.code ?? "",
+    }
+  }
+  return byId
+})
+
+const typeMap = computed(() => {
+  const byId = {}
+  for (const t of props.assetTypes || []) {
+    // tuỳ backend: fixedAssetTypeId / fixedAssetTypeName / fixedAssetTypeCode (hoặc id/name/code)
+    const id = t.fixedAssetTypeId ?? t.id
+    byId[id] = {
+      name: t.fixedAssetTypeName ?? t.name ?? "",
+      code: t.fixedAssetTypeCode ?? t.code ?? "",
+    }
+  }
+  return byId
+})
+
 function normalizeToInputDate(value) {
   if (!value) return ""
   const s = String(value).trim()
@@ -52,17 +91,20 @@ function close() {
 watch(
   () => form.fixedAssetDepartmentId,
   (id) => {
-    const item = props.departments.find((x) => x.id === id)
-    form.fixedAssetDepartmentName = item ? item.name : ""
+    form.fixedAssetDepartmentName = departmentMap.value[id]?.name || ""
   }
 )
 
 watch(
   () => form.fixedAssetTypeId,
   (id) => {
-    const item = props.assetTypes.find((x) => x.id === id)
-    form.fixedAssetTypeName = item ? item.name : ""
+    form.fixedAssetTypeName = typeMap.value[id]?.name || ""
   }
+)
+watch(
+  () => [form.fixedAssetCost, form.fixedAssetDepreciationRate],
+  () => recalcDepreciationValueYear(),
+  { immediate: true }
 )
 
 watch(
@@ -107,12 +149,11 @@ watch(
 const popupTitle = computed(() => (props.mode === "edit" ? "Sửa tài sản" : "Thêm tài sản"))
 
 function onSave() {
-  // NOTE: map key đúng theo DTO backend của bạn nếu cần
   const payload = {
     fixedAssetCode: form.fixedAssetCode.trim(),
     fixedAssetName: form.fixedAssetName.trim(),
-    fixedAssetDepartmentId: form.fixedAssetDepartmentId || null,
-    fixedAssetTypeId: form.fixedAssetTypeId || null,
+    fixedAssetDepartmentId: form.fixedAssetDepartmentId,
+    fixedAssetTypeId: form.fixedAssetTypeId,
     fixedAssetQuantity: Number(form.fixedAssetQuantity || 0),
     fixedAssetCost: Number(form.fixedAssetCost || 0),
     fixedAssetDepreciationRate: Number(form.fixedAssetDepreciationRate || 0),
@@ -122,6 +163,8 @@ function onSave() {
     fixedAssetUsingYear: Number(form.fixedAssetUsingYear || 0),
     fixedAssetDepreciationValueYear: Number(form.fixedAssetDepreciationValueYear || 0),
   }
+    recalcDepreciationValueYear() // ✅ tính lại trước khi emit
+
 
   emit("save", payload)
   close()
@@ -156,7 +199,10 @@ function onSave() {
                 <div class="select-wrap">
                   <select v-model="form.fixedAssetDepartmentId" class="ctl" required>
                     <option value="" disabled>Chọn mã bộ phận</option>
-                    <option v-for="d in departments" :key="d.id" :value="d.id">{{ d.code }}</option>
+                    <option v-for="d in departments" :key="d.fixedAssetDepartmentId ?? d.id"
+                      :value="d.fixedAssetDepartmentId ?? d.id">
+                      {{ d.fixedAssetDepartmentCode ?? d.code }}
+                    </option>
                   </select>
                   <span class="chev">▾</span>
                 </div>
@@ -169,7 +215,10 @@ function onSave() {
                 <div class="select-wrap">
                   <select v-model="form.fixedAssetTypeId" class="ctl" required>
                     <option value="" disabled>Chọn mã loại</option>
-                    <option v-for="t in assetTypes" :key="t.id" :value="t.id">{{ t.code }}</option>
+                    <option v-for="t in assetTypes" :key="t.fixedAssetTypeId ?? t.id"
+                      :value="t.fixedAssetTypeId ?? t.id">
+                      {{ t.fixedAssetTypeCode ?? t.code }}
+                    </option>
                   </select>
                   <span class="chev">▾</span>
                 </div>
@@ -261,8 +310,8 @@ function onSave() {
           <div class="row">
             <div class="row-label">Giá trị hao mòn năm <span class="req">*</span></div>
             <div class="row-ctrl">
-              <input v-model.number="form.fixedAssetDepreciationValueYear" class="ctl right" type="number" min="0"
-                step="1000" required />
+              <input v-model.number="form.fixedAssetDepreciationValueYear" class="ctl right" type="number"
+                min="0" step="1000" required readonly />
             </div>
           </div>
         </div>

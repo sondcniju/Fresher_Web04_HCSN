@@ -1,50 +1,48 @@
-// Mô tả: Service gọi API tài sản cố định
-// Ngày tạo: 2026-01-14
-
 import http from "@/utils/api"
 
-// Enum endpoint (dễ maintain)
-export const AssetApi = Object.freeze({
-  Assets: "/fixed-assets",
-  Departments: "/fixed-asset-departments",
-  Types: "/fixed-asset-types",
-})
-
 export const assetService = {
-  // Lấy danh sách (có filter)
-  async getList(params) {
-    // params: { keyword, year, assetTypeId, departmentId, page, pageSize }
-    const res = await http.get(AssetApi.Assets, { params })
+  // GET ALL
+  async getAsset() {
+    const res = await http.get("/api/v1/fixed-assets/GetAll")
+     return res.data  
+  },
+    // GET department
+  async getDepartment() {
+    const res = await http.get("/api/v1/fixed-asset-department")
+     return res.data  
+  },
+    // GET type
+  async getType() {
+    const res = await http.get("/api/v1/fixed-asset-type")
+     return res.data  
+  },
+    // combobox departments
+  async getDepartmentCombobox() {
+    const res = await http.get("/api/v1/fixed-asset-department/combobox")
     return res.data
   },
 
-  async getById(id) {
-    const res = await http.get(`${AssetApi.Assets}/${id}`)
+  // combobox types
+  async getTypeCombobox() {
+    const res = await http.get("/api/v1/fixed-asset-type/combobox")
     return res.data
   },
 
+  // INSERT
   async create(payload) {
-    const res = await http.post(AssetApi.Assets, payload)
+    const res = await http.post("/api/v1/fixed-assets/Insert", payload)
     return res.data
   },
 
+  // UPDATE
   async update(id, payload) {
-    const res = await http.put(`${AssetApi.Assets}/${id}`, payload)
+    const res = await http.put(`/api/v1/fixed-assets/Update:${id}`, payload)
     return res.data
   },
 
+  // DELETE
   async remove(id) {
-    const res = await http.delete(`${AssetApi.Assets}/${id}`)
-    return res.data
-  },
-
-  async getDepartments() {
-    const res = await http.get(AssetApi.Departments)
-    return res.data
-  },
-
-  async getTypes() {
-    const res = await http.get(AssetApi.Types)
+    const res = await http.delete(`/api/v1/fixed-assets/Delete:${id}`)
     return res.data
   },
 }

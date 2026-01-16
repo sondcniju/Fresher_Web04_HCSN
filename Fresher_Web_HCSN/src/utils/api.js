@@ -3,7 +3,7 @@
 import axios from "axios"
 
 const http = axios.create({
-  baseURL: "http://localhost:7029/", // ví dụ: http://localhost:5159/api
+  baseURL: "https://localhost:7029", // ví dụ: http://localhost:5159/api
   timeout: 15000,
 })
 

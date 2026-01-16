@@ -1,39 +1,48 @@
 <script setup>
-// Mô tả: Màn hình Danh sách tài sản (gắn API để lấy dữ liệu hiển thị lên table, giữ nguyên style hiện tại)
-// Ngày tạo: 2026-01-15
+// Mô tả: Màn hình Danh sách tài sản (giữ nguyên phần tìm kiếm + thêm tài sản, dữ liệu lấy từ LocalStorage để chuẩn bị gắn API)
+// Ngày tạo: 2026-01-14
 import AssetPopup from "@/components/popup/AssetPopup.vue"
 import { computed, onMounted, reactive, ref, watch } from "vue"
-import { assetService } from "@/service/AssetService"
 
-// ====== LocalStorage Keys (chỉ lưu width cột) ======
+// ====== LocalStorage Keys ======
+const LS_ASSET_KEY = "misa_assets_v1"
 const LS_COL_KEY = "misa_assets_colwidth_v1"
 
 // ====== Filters (giữ nguyên phần tìm kiếm) ======
 const year = ref(2021)
 const keyword = ref("")
-const assetTypeId = ref("") // đang filter theo typeName (client-side)
-const departmentId = ref("") // đang filter theo departmentName (client-side)
+const assetType = ref("")
+const department = ref("")
 
 // ====== Data ======
-const rows = ref([]) // data để render table (đã normalize theo format cũ)
-const assetTypes = ref([]) // dùng cho popup dropdown
-const departments = ref([])
+const rows = ref([])
 
 // widths theo thứ tự cột (checkbox, STT, mã, tên, loại, bộ phận, số lượng, nguyên giá, HM/KH, còn lại, chức năng)
 const defaultColWidths = [42, 52, 150, 180, 160, 220, 90, 120, 120, 120, 90]
 const colWidths = reactive([...defaultColWidths])
 
-// ✅ FIX lệch cột: khóa width thật của table = tổng colWidths
-// (tránh browser tự phân phối lại cột khi table width:100%)
-const tableWidth = computed(() => colWidths.reduce((s, w) => s + Number(w || 0), 0))
-
 const selectedId = ref(null)
+
+// ====== Checkbox selection (multi-select) ======
+// Mô tả: Lưu danh sách id được tick để phục vụ chọn tất cả / thao tác hàng loạt
+// Ngày tạo: 2026-01-16
+const checkedIds = ref([]) // string[]
+
+function isRowChecked(id) {
+  return checkedIds.value.includes(id)
+}
+
+function toggleRowChecked(id, checked) {
+  const set = new Set(checkedIds.value)
+  if (checked) set.add(id)
+  else set.delete(id)
+  checkedIds.value = Array.from(set)
+}
 
 // ====== Popup state ======
 const isPopupOpen = ref(false) // dùng v-model với AssetPopup
 const popupMode = ref("create") // "create" | "edit"
 const editingAsset = ref(null)
-const editingId = ref(null)
 
 // ====== Helpers ======
 function readJson(key, fallback) {
@@ -52,136 +61,91 @@ function fmtMoney(v) {
   return (Number(v) || 0).toLocaleString("vi-VN")
 }
 
-/**
- * Mô tả: Load danh mục (bộ phận + loại tài sản) để popup dropdown dùng
- * Ngày tạo: 2026-01-15
- */
-async function loadCategories() {
-  const [depList, typeList] = await Promise.all([
-    assetService.getDepartmentCombobox(),
-    assetService.getTypeCombobox(),
-  ])
+// ====== Seed data (tạo 1 lần) ======
+function buildMockAssets() {
+  const uid = () =>
+    globalThis.crypto?.randomUUID
+      ? crypto.randomUUID()
+      : String(Date.now()) + Math.random().toString(16).slice(2)
 
-  departments.value = depList ?? []
-  assetTypes.value = typeList ?? []
+  return [
+    { id: uid(), code: "55H7WN72/2022", name: "Dell Inspiron 3467", typeName: "Máy vi tính xách tay", department: "Phòng Hành chính Kế toán", qty: 1, cost: 20000000, dep: 894000, remain: 19106000 },
+    { id: uid(), code: "MXT88618", name: "Máy tính xách tay Fujitsu", typeName: "Máy vi tính xách tay", department: "Phòng Hành chính Kế toán", qty: 1, cost: 10000000, dep: 1225000, remain: 8775000 },
+    { id: uid(), code: "37H7WN72/2022", name: "Dell Inspiron 3467", typeName: "Máy vi tính xách tay", department: "Phòng Hành chính Kế toán", qty: 4, cost: 40000000, dep: 1730000, remain: 38270000 },
+    { id: uid(), code: "MXT8866", name: "Máy tính xách tay Fujitsu", typeName: "Máy vi tính xách tay", department: "Phòng Thư ký", qty: 1, cost: 5000000, dep: 1646000, remain: 3354000 },
+    { id: uid(), code: "14H7WN72/2019", name: "Dell Latitude E 5450", typeName: "Máy vi tính xách tay", department: "Phòng Hành chính Kế toán", qty: 1, cost: 10000000, dep: 2456000, remain: 7544000 },
+    { id: uid(), code: "D8PQ3F2/2017", name: "DELL Inspiron 3467", typeName: "Máy vi tính xách tay", department: "Phòng Hành chính Kế toán", qty: 20, cost: 50000000, dep: 913000, remain: 49087000 },
+    { id: uid(), code: "MXT8869", name: "Máy tính xách tay Fujitsu", typeName: "Máy vi tính xách tay", department: "Phòng Hành chính Kế toán", qty: 1, cost: 50000000, dep: 3929000, remain: 46071000 },
+    { id: uid(), code: "49H7WN72/2022", name: "Dell Inspiron 3467", typeName: "Máy vi tính xách tay", department: "Phòng Tài chính Tổng hợp", qty: 1, cost: 4000000, dep: 432000, remain: 3568000 },
+    { id: uid(), code: "33H7WN72/2022", name: "Dell Inspiron 3467", typeName: "Máy vi tính xách tay", department: "Phòng Tài chính Tổng hợp", qty: 1, cost: 20000000, dep: 3400000, remain: 16600000 },
+    { id: uid(), code: "22H7WN72/2019", name: "Dell Latitude E 5450", typeName: "Máy vi tính xách tay", department: "Phòng Tài chính Tổng hợp", qty: 1, cost: 40000000, dep: 3091000, remain: 36909000 },
+    { id: uid(), code: "MXT88617", name: "Máy vi tính xách tay Fujitsu", typeName: "Máy vi tính xách tay", department: "Phòng Tài chính Tổng hợp", qty: 1, cost: 40000000, dep: 1789000, remain: 38211000 },
+    { id: uid(), code: "50H7WN72/2022", name: "Dell Inspiron 3467", typeName: "Máy vi tính xách tay", department: "Phòng Tài chính Tổng hợp", qty: 1, cost: 20000000, dep: 1521000, remain: 18479000 },
+  ]
 }
 
-const departmentMap = computed(() => {
-  const map = {}
-  departments.value.forEach((d) => {
-    map[d.fixedAssetDepartmentId] = d.fixedAssetDepartmentName
-  })
-  return map
-})
-
-const assetTypeMap = computed(() => {
-  const map = {}
-  assetTypes.value.forEach((t) => {
-    map[t.fixedAssetTypeId ?? t.id] = t.fixedAssetTypeName ?? t.name
-  })
-  return map
-})
-
-/**
- * Mô tả: Load danh sách tài sản từ API
- * Ngày tạo: 2026-01-15
- */
+// ====== Data layer (để sau thay bằng API) ======
 async function loadAssets() {
-  try {
-    const list = await assetService.getAsset()
-
-    rows.value = (list ?? []).map((x) => {
-      const departmentName = x.fixedAssetDepartmentName || departmentMap.value[x.fixedAssetDepartmentId] || ""
-
-      const typeName = x.fixedAssetTypeName || assetTypeMap.value[x.fixedAssetTypeId] || ""
-
-      const assetId = x.fixedAssetId ?? x.FixedAssetId ?? x.id
-
-      return {
-        typeId: x.fixedAssetTypeId,
-        departmentId: x.fixedAssetDepartmentId,
-        id: assetId,
-        fixedAssetId: assetId,
-        __raw: x,
-        code: x.fixedAssetCode,
-        name: x.fixedAssetName,
-        typeName,
-        department: departmentName,
-        qty: x.fixedAssetQuantity,
-        cost: x.fixedAssetCost,
-        dep: x.fixedAssetDepreciationValueYear ?? 0,
-        remain:
-          x.fixedAssetRemainValue ??
-          Math.max(0, Number(x.fixedAssetCost) - Number(x.fixedAssetDepreciationValueYear ?? 0)),
-      }
-    })
-
-    selectedId.value = rows.value[0]?.id ?? null
-  } catch (err) {
-    console.error("Load assets error:", err)
-    rows.value = []
+  const data = readJson(LS_ASSET_KEY, null)
+  if (!Array.isArray(data) || data.length === 0) {
+    const seed = buildMockAssets()
+    writeJson(LS_ASSET_KEY, seed)
+    rows.value = seed
+    selectedId.value = seed[0]?.id ?? null
+    return
   }
+  rows.value = data
+  selectedId.value = data[0]?.id ?? null
+}
+
+async function createAsset(payload) {
+  const data = readJson(LS_ASSET_KEY, [])
+  const uid = () =>
+    globalThis.crypto?.randomUUID
+      ? crypto.randomUUID()
+      : String(Date.now()) + Math.random().toString(16).slice(2)
+
+  const newItem = { id: uid(), ...payload }
+  const next = [newItem, ...data]
+  writeJson(LS_ASSET_KEY, next)
+  rows.value = next
+  selectedId.value = newItem.id
+  return newItem
+}
+
+async function updateAsset(id, patch) {
+  const data = readJson(LS_ASSET_KEY, [])
+  const next = data.map((x) => (x.id === id ? { ...x, ...patch } : x))
+  writeJson(LS_ASSET_KEY, next)
+  rows.value = next
+  selectedId.value = id
 }
 
 // ====== Popup actions ======
-function openCreate() {
+function onAddAsset() {
   popupMode.value = "create"
   editingAsset.value = null
-  editingId.value = null
   isPopupOpen.value = true
 }
 
 function openEdit(row) {
   popupMode.value = "edit"
-  editingId.value = row.id
-  editingAsset.value = row.__raw || row
+  // clone để tránh sửa trực tiếp dữ liệu table khi chưa bấm lưu
+  editingAsset.value = { ...row }
   isPopupOpen.value = true
 }
 
-/**
- * Mô tả: Nhận payload từ popup -> Insert/Update -> reload list
- * Ngày tạo: 2026-01-15
- */
 async function handleSave(payload) {
-  try {
-    if (popupMode.value === "create") {
-      await assetService.create(payload)
-    } else {
-      const id = editingId.value
-      if (!id) throw new Error("Không có id để cập nhật")
-      await assetService.update(id, payload)
-    }
-    await loadAssets()
-  } catch (e) {
-    console.error("Save error:", e)
+  if (popupMode.value === "create") {
+    await assetService.create(payload)
+  } else {
+    const id = editingAsset.value?.fixedAssetId || editingAsset.value?.id
+    await assetService.update(id, payload)
   }
+  await loadList()
 }
 
-// Mô tả: Xoá tài sản theo dòng đang chọn
-// Ngày tạo: 2026-01-15
-async function handleDelete() {
-  try {
-    const id = selectedId.value
-    if (!id) {
-      alert("Vui lòng chọn 1 dòng để xoá")
-      return
-    }
-
-    const ok = confirm("Bạn có chắc chắn muốn xoá tài sản này?")
-    if (!ok) return
-
-    await assetService.remove(id)
-
-    // reset chọn + reload list
-    selectedId.value = null
-    await loadAssets()
-  } catch (e) {
-    console.error("Delete error:", e)
-    alert("Xoá thất bại, vui lòng kiểm tra lại backend")
-  }
-}
-
-// ====== Filtered rows (giữ nguyên logic filter client-side) ======
+// ====== Filtered rows ======
 const filteredRows = computed(() => {
   const kw = keyword.value.trim().toLowerCase()
   return rows.value.filter((r) => {
@@ -190,12 +154,72 @@ const filteredRows = computed(() => {
       String(r.code).toLowerCase().includes(kw) ||
       String(r.name).toLowerCase().includes(kw) ||
       String(r.department).toLowerCase().includes(kw)
-    const matchType = !assetTypeId.value || r.typeId === assetTypeId.value
-    const matchDept = !departmentId.value || r.departmentId === departmentId.value
+    const matchType = !assetType.value || r.typeName === assetType.value
+    const matchDept = !department.value || r.department === department.value
     return matchKw && matchType && matchDept
   })
 })
 
+// ====== Lazyload (render dần khi scroll) ======
+// Mô tả: Chỉ render một phần danh sách, cuộn xuống thì nạp thêm để nhẹ UI
+// Ngày tạo: 2026-01-16
+const PAGE_SIZE = 50
+const visibleCount = ref(PAGE_SIZE)
+
+watch(
+  () => [keyword.value, assetType.value, department.value],
+  () => {
+    visibleCount.value = PAGE_SIZE
+    // Khi filter thay đổi, reset chọn checkbox theo list mới
+    checkedIds.value = []
+  }
+)
+
+const visibleRows = computed(() => filteredRows.value.slice(0, visibleCount.value))
+
+function onTableScroll(e) {
+  const el = e.target
+  if (!el) return
+  const nearBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 60
+  if (nearBottom) {
+    visibleCount.value = Math.min(filteredRows.value.length, visibleCount.value + PAGE_SIZE)
+  }
+}
+
+// ====== Select all (checkbox header) ======
+// Mô tả: Tick checkbox đầu bảng sẽ chọn tất cả dòng đang hiển thị
+// Ngày tạo: 2026-01-16
+const headerChk = ref(null)
+
+const allVisibleChecked = computed(() => {
+  if (visibleRows.value.length === 0) return false
+  return visibleRows.value.every((r) => isRowChecked(r.id))
+})
+
+const someVisibleChecked = computed(() => {
+  const hasAny = visibleRows.value.some((r) => isRowChecked(r.id))
+  return hasAny && !allVisibleChecked.value
+})
+
+watch(
+  () => someVisibleChecked.value,
+  (val) => {
+    if (headerChk.value) headerChk.value.indeterminate = !!val
+  },
+  { immediate: true }
+)
+
+function toggleAllVisible(checked) {
+  const set = new Set(checkedIds.value)
+  if (checked) {
+    visibleRows.value.forEach((r) => set.add(r.id))
+  } else {
+    visibleRows.value.forEach((r) => set.delete(r.id))
+  }
+  checkedIds.value = Array.from(set)
+}
+
+// dropdown options (demo) lấy từ dữ liệu
 const assetTypeOptions = computed(() => {
   const set = new Set(rows.value.map((x) => x.typeName).filter(Boolean))
   return ["", ...Array.from(set)]
@@ -244,76 +268,69 @@ function onResizeUp() {
   window.removeEventListener("mouseup", onResizeUp)
 }
 
+// ====== init ======
+onMounted(async () => {
+  loadColWidths()
+  await loadAssets()
+})
+
+// chọn dòng
 function selectRow(id) {
   selectedId.value = id
 }
-
-onMounted(async () => {
-  loadColWidths()
-  await loadCategories()
-  await loadAssets()
-})
 </script>
 
 <template>
-   <!-- tạo context menu để bám chuột phải ra thêm sửa xóa -->
   <section class="page">
     <!-- Filters + actions -->
     <div class="toolbar">
       <div class="filters">
         <div class="field">
-          <span class="prefix"><span class="icon icon-search" aria-hidden="true"></span></span>
+          <span class="prefix">🔎</span>
           <input v-model="keyword" class="input" placeholder="Tìm kiếm tài sản" />
         </div>
 
         <div class="field">
-          <span class="prefix"><span class="icon icon-type" aria-hidden="true"></span></span>
-          <select v-model="assetTypeId" class="input select">
+          <span class="prefix">⎘</span>
+          <select v-model="assetType" class="input select">
             <option value="">Loại tài sản</option>
-            <option v-for="t in assetTypes" :key="t.fixedAssetTypeId" :value="t.fixedAssetTypeId">
-              {{ t.fixedAssetTypeName }} <!-- hoặc code tuỳ bạn -->
-            </option>
+            <option v-for="t in assetTypeOptions" :key="t" :value="t" v-if="t">{{ t }}</option>
           </select>
         </div>
 
         <div class="field">
-          <span class="prefix"><span class="icon icon-type" aria-hidden="true"></span></span>
-          <select v-model="departmentId" class="input select">
+          <span class="prefix">⎘</span>
+          <select v-model="department" class="input select">
             <option value="">Bộ phận sử dụng</option>
-            <option v-for="d in departments" :key="d.fixedAssetDepartmentId" :value="d.fixedAssetDepartmentId">
-              {{ d.fixedAssetDepartmentName }} <!-- hoặc code -->
-            </option>
+            <option v-for="d in deptOptions" :key="d" :value="d" v-if="d">{{ d }}</option>
           </select>
         </div>
       </div>
 
       <div class="actions">
-        <button class="btn primary" type="button" @click="openCreate">+ Thêm tài sản</button>
-        <button class="btn icon" type="button" title="Xuất" aria-label="Xuất">
-          <span class="icon icon-export" aria-hidden="true"></span>
-        </button>
-        <!-- <button class="btn icon" type="button" title="Xóa" aria-label="Xóa">
-          
-        </button> -->
-        <button class="btn icon " type="button" title="Xoá" @click="handleDelete"><span class="icon icon-delete"
-            aria-hidden="true"></span>
-        </button>
-
+        <button class="btn primary" type="button" @click="onAddAsset">+ Thêm tài sản</button>
+        <button class="btn icon" type="button" title="Xuất">⤓</button>
+        <button class="btn icon danger" type="button" title="Xoá">🗑</button>
       </div>
     </div>
 
     <!-- Table -->
-    <div class="table-wrap">
-      <!-- ✅ FIX lệch cột: width table = tổng colWidths, min-width:100% để vẫn phủ khung -->
-      <table class="asset-table" :style="{ width: tableWidth + 'px' }">
+    <div class="table-wrap" @scroll="onTableScroll">
+      <table class="asset-table">
         <colgroup>
           <col v-for="(w, i) in colWidths" :key="i" :style="{ width: w + 'px' }" />
         </colgroup>
 
         <thead>
           <tr>
-            <th class="th-center">
-              <input class="chk" type="checkbox" />
+            <th class="th-center cell-check">
+              <input
+                ref="headerChk"
+                class="chk"
+                type="checkbox"
+                :checked="allVisibleChecked"
+                @change="toggleAllVisible($event.target.checked)"
+              />
               <span class="col-resizer" @mousedown="onResizeDown($event, 0)"></span>
             </th>
 
@@ -370,9 +387,17 @@ onMounted(async () => {
         </thead>
 
         <tbody>
-          <tr v-for="(r, idx) in filteredRows" :key="r.id" :class="{ selected: r.id === selectedId }"
+          <tr v-for="(r, idx) in visibleRows" :key="r.id" :class="{ selected: r.id === selectedId }"
             @click="selectRow(r.id)">
-            <td class="td-center"><input class="chk" type="checkbox" @click.stop /></td>
+            <td class="td-center cell-check">
+              <input
+                class="chk"
+                type="checkbox"
+                :checked="isRowChecked(r.id)"
+                @change="toggleRowChecked(r.id, $event.target.checked)"
+                @click.stop
+              />
+            </td>
             <td class="td-center">{{ idx + 1 }}</td>
             <td class="td-ellipsis">{{ r.code }}</td>
             <td class="td-ellipsis">{{ r.name }}</td>
@@ -403,8 +428,7 @@ onMounted(async () => {
     </div>
 
     <!-- Popup -->
-    <AssetPopup v-model="isPopupOpen" :mode="popupMode" :asset="editingAsset" :departments="departments"
-      :assetTypes="assetTypes" @save="handleSave" />
+    <AssetPopup v-model="isPopupOpen" :mode="popupMode" :asset="editingAsset" @save="handleSave" />
   </section>
 </template>
 
@@ -486,42 +510,10 @@ onMounted(async () => {
 .btn.icon {
   width: 34px;
   padding: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* Icon */
-.icon {
-  width: 20px;
-  height: 20px;
-  display: inline-flex;
-  background: url(/src/assets/icons/qlts-icon.svg);
-  background-repeat: no-repeat;
-}
-
-.icon-search {
-  background-position: -241px -153px;
-  width: 22px;
-  height: 22px;
-}
-
-.icon-type {
-  background-position: -243px -69px;
-  width: 17px;
-  height: 16px;
-}
-
-.icon-export {
-  background-position: -287px -111px;
-  width: 18px;
-  height: 17px;
-}
-
-.icon-delete {
-  background-position: -463px -111px;
-  width: 18px;
-  height: 18px;
+.btn.danger {
+  color: #ff3b30;
 }
 
 /* Table wrap */
@@ -530,23 +522,15 @@ onMounted(async () => {
   border-radius: 4px;
   overflow: auto;
   background: #fff;
-  scrollbar-gutter: stable;
 }
 
 /* Table */
 .asset-table {
+  width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   font-family: Roboto, Arial, sans-serif;
   font-size: 12px;
-  min-width: 100%;
-  /* nếu tổng cột nhỏ hơn khung thì vẫn phủ full */
-}
-
-/* ✅ FIX lệch khi resize: width tính luôn padding/border */
-.asset-table th,
-.asset-table td {
-  box-sizing: border-box;
 }
 
 .asset-table thead th {
@@ -590,6 +574,16 @@ onMounted(async () => {
   accent-color: #2bb5ff;
 }
 
+/* checkbox thẳng hàng */
+.cell-check {
+  padding: 0;
+}
+
+.cell-check .chk {
+  margin: 0;
+  vertical-align: middle;
+}
+
 /* selected row giống ảnh */
 .asset-table tbody tr.selected td {
   background: #d9f3ff;
@@ -626,6 +620,7 @@ onMounted(async () => {
   background: rgba(43, 181, 255, 0.15);
 }
 
+/* nút icon action */
 .icon-action {
   width: 28px;
   height: 28px;
