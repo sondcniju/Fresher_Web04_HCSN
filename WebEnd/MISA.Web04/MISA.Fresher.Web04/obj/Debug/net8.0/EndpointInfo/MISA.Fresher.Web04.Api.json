@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/v1/fixed-assets": {
+    "/api/v1/fixed-assets/GetAll": {
       "get": {
         "tags": [
           "FixedAsset"
@@ -15,7 +15,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/v1/fixed-assets/Insert": {
       "post": {
         "tags": [
           "FixedAsset"
@@ -24,17 +26,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FixedAsset"
+                "$ref": "#/components/schemas/FixedAssetCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/FixedAsset"
+                "$ref": "#/components/schemas/FixedAssetCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/FixedAsset"
+                "$ref": "#/components/schemas/FixedAssetCreateDto"
               }
             }
           }
@@ -46,29 +48,7 @@
         }
       }
     },
-    "/api/v1/fixed-assets/{id}": {
-      "get": {
-        "tags": [
-          "FixedAsset"
-        ],
-        "operationId": "GetFixedAssetById",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/api/v1/fixed-assets/Update/{id}": {
       "put": {
         "tags": [
           "FixedAsset"
@@ -88,17 +68,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FixedAsset"
+                "$ref": "#/components/schemas/FixedAssetUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/FixedAsset"
+                "$ref": "#/components/schemas/FixedAssetUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/FixedAsset"
+                "$ref": "#/components/schemas/FixedAssetUpdateDto"
               }
             }
           }
@@ -108,7 +88,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/v1/fixed-assets/Delete/{id}": {
       "delete": {
         "tags": [
           "FixedAsset"
@@ -131,41 +113,188 @@
         }
       }
     },
-    "/WeatherForecast": {
+    "/api/v1/fixed-assets/filter": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "FixedAsset"
         ],
-        "operationId": "GetWeatherForecast",
+        "parameters": [
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Keyword",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "DepartmentId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "TypeId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/fixed-assets/new-code": {
+      "get": {
+        "tags": [
+          "FixedAsset"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/fixed-assets/DeleteBulk": {
+      "delete": {
+        "tags": [
+          "FixedAsset"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteBulkRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteBulkRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteBulkRequest"
               }
             }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/fixed-assets/{id}/clone": {
+      "put": {
+        "tags": [
+          "FixedAsset"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetDuplicateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetDuplicateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetDuplicateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/fixed-asset-department": {
+      "get": {
+        "tags": [
+          "FixedAssetDepartment"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/fixed-asset-department/combobox": {
+      "get": {
+        "tags": [
+          "FixedAssetDepartment"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/fixed-asset-type": {
+      "get": {
+        "tags": [
+          "FixedAssetType"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/fixed-asset-type/combobox": {
+      "get": {
+        "tags": [
+          "FixedAssetType"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -173,7 +302,21 @@
   },
   "components": {
     "schemas": {
-      "FixedAsset": {
+      "DeleteBulkRequest": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FixedAssetCreateDto": {
         "type": "object",
         "properties": {
           "fixedAssetId": {
@@ -220,6 +363,14 @@
             "type": "number",
             "format": "double"
           },
+          "fixedAssetDepreciationRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "fixedAssetStartUsingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -239,23 +390,148 @@
         },
         "additionalProperties": false
       },
-      "WeatherForecast": {
+      "FixedAssetDuplicateDto": {
         "type": "object",
         "properties": {
-          "date": {
+          "fixedAssetId": {
             "type": "string",
-            "format": "date"
+            "format": "uuid"
           },
-          "temperatureC": {
+          "fixedAssetCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "fixedAssetName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fixedAssetDepartmentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fixedAssetTypeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fixedAssetPurchaseDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fixedAssetUsingYear": {
             "type": "integer",
             "format": "int32"
           },
-          "temperatureF": {
+          "fixedAssetTrackingYear": {
             "type": "integer",
-            "format": "int32",
-            "readOnly": true
+            "format": "int32"
           },
-          "summary": {
+          "fixedAssetQuantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fixedAssetCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "fixedAssetDepreciationValueYear": {
+            "type": "number",
+            "format": "double"
+          },
+          "fixedAssetDepreciationRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "fixedAssetStartUsingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FixedAssetUpdateDto": {
+        "type": "object",
+        "properties": {
+          "fixedAssetId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fixedAssetCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "fixedAssetName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fixedAssetDepartmentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fixedAssetTypeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fixedAssetPurchaseDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fixedAssetUsingYear": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fixedAssetTrackingYear": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fixedAssetQuantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fixedAssetCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "fixedAssetDepreciationValueYear": {
+            "type": "number",
+            "format": "double"
+          },
+          "fixedAssetDepreciationRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "fixedAssetStartUsingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
             "type": "string",
             "nullable": true
           }

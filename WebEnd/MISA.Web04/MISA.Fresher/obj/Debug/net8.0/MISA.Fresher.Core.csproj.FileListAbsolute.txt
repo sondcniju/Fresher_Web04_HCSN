@@ -12,3 +12,11 @@ D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\refint\MISA.Fre
 D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\MISA.Fresher.Core.pdb
 D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\MISA.Fresher.Core.genruntimeconfig.cache
 D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\ref\MISA.Fresher.Core.dll
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Features.dll
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\bin\Debug\net8.0\System.IO.Pipelines.dll
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\MISA.Fresher.Core.csproj.AssemblyReference.cache
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\obj\Debug\net8.0\MISA.Fre.18BB29D5.Up2Date
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Homework-main\WebEnd\MISA.Web04\MISA.Fresher\bin\Debug\net8.0\MySqlConnector.dll

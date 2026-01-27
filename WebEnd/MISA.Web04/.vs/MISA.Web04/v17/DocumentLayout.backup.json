@@ -3,36 +3,112 @@
   "WorkspaceRootPath": "D:\\Homework-main\\WebEnd\\MISA.Web04\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\interface\\repository\\ifixedassetrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\interface\\repository\\ifixedassetrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\interface\\service\\ifixedassetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\interface\\service\\ifixedassetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\misaattribute\\misacolumnname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\misaattribute\\misacolumnname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\service\\fixedassetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\service\\fixedassetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.web04\\controllers\\fixedassetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|solutionrelative:misa.fresher.web04\\controllers\\fixedassetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.web04\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|solutionrelative:misa.fresher.web04\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\interface\\service\\ibaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\interface\\service\\ibaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\service\\fixedassetdepartmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\service\\fixedassetdepartmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\service\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\service\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\interface\\repository\\ibaserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\interface\\repository\\ibaserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\repository\\fixedassetrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\repository\\fixedassetrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\repository\\baserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\repository\\baserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\repository\\fixedassetdepartmentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\repository\\fixedassetdepartmentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\service\\fixedassettypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\service\\fixedassettypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\repository\\fixedassettyperepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\repository\\fixedassettyperepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\interface\\repository\\ifixedassetdepartmentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\interface\\repository\\ifixedassetdepartmentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\interface\\service\\ifixedassetdepartmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\interface\\service\\ifixedassetdepartmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\interface\\repository\\ifixedassettyperepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\interface\\repository\\ifixedassettyperepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\interface\\service\\ifixedassettypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\interface\\service\\ifixedassettypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\dto\\fixedassetduplicatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\dto\\fixedassetduplicatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\dto\\fixedassetupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\dto\\fixedassetupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\dto\\fixedassettabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\dto\\fixedassettabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\dto\\fixedassetfilterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\dto\\fixedassetfilterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\dto\\fixedassetdepartmentcomboboxdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\dto\\fixedassetdepartmentcomboboxdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\dto\\fixedassetcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\dto\\fixedassetcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\dto\\deletemanydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\dto\\deletemanydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.web04\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|solutionrelative:misa.fresher.web04\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.web04\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|solutionrelative:misa.fresher.web04\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\repository\\fixedassetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\repository\\fixedassetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\interfaces\\ifixedassetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\interfaces\\ifixedassetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\data\\mysqlconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\data\\mysqlconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\data\\idbconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\data\\idbconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\enities\\fixedassettype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,36 +123,48 @@
       "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\enities\\fixedasset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.web04\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|solutionrelative:misa.fresher.web04\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\dto\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\dto\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\services\\fixedassetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\services\\fixedassetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.web04\\controllers\\fixedassetdepartmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|solutionrelative:misa.fresher.web04\\controllers\\fixedassetdepartmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\services\\ifixedassetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\services\\ifixedassetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\misa.fresher.infrastructer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\misa.fresher.infrastructer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\misa.fresher.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\misa.fresher.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.web04\\controllers\\fixedassettypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|solutionrelative:misa.fresher.web04\\controllers\\fixedassettypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.web04\\misa.fresher.web04.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|solutionrelative:misa.fresher.web04\\misa.fresher.web04.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\dto\\fixedassettypecomboboxdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\dto\\fixedassettypecomboboxdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\misaattribute\\misatablename.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\misaattribute\\misatablename.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher\\misa.fresher.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B8C793B7-1923-4806-AE2A-7D5902C6B52F}|MISA.Fresher\\MISA.Fresher.Core.csproj|solutionrelative:misa.fresher\\misa.fresher.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.infrastructer\\misa.fresher.infrastructer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{602E9456-B7CC-4205-8980-E1EFF292ACB7}|MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj|solutionrelative:misa.fresher.infrastructer\\misa.fresher.infrastructer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.web04\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|solutionrelative:misa.fresher.web04\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.web04\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|solutionrelative:misa.fresher.web04\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|d:\\homework-main\\webend\\misa.web04\\misa.fresher.web04\\misa.fresher.web04.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{DE30FABC-7429-40E4-91CF-3357F136D205}|MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj|solutionrelative:misa.fresher.web04\\misa.fresher.web04.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Homework-main\\WebEnd\\MISA.Web04\\.filenesting.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -90,230 +178,249 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FixedAssetRepo.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Repository\\FixedAssetRepo.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\Repository\\FixedAssetRepo.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Repository\\FixedAssetRepo.cs",
+              "RelativeToolTip": "MISA.Fresher.Infrastructer\\Repository\\FixedAssetRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T05:42:44.939Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\appsettings.Development.json",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\appsettings.Development.json",
-              "RelativeToolTip": "MISA.Fresher.Web04\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-14T06:09:40.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FixedAssetController.cs",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Controllers\\FixedAssetController.cs",
-              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\Controllers\\FixedAssetController.cs",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Controllers\\FixedAssetController.cs",
-              "RelativeToolTip": "MISA.Fresher.Web04\\Controllers\\FixedAssetController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAIwCIAAAAJAAAAAAAAAA==",
+              "Title": "FixedAssetService.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Service\\FixedAssetService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Service\\FixedAssetService.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Service\\FixedAssetService.cs",
+              "RelativeToolTip": "MISA.Fresher\\Service\\FixedAssetService.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAkwFIAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T08:25:04.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Program.cs",
-              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\Program.cs",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Program.cs",
-              "RelativeToolTip": "MISA.Fresher.Web04\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T02:50:18.553Z",
+              "WhenOpened": "2026-01-18T10:23:53.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\appsettings.json",
-              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\appsettings.json",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\appsettings.json",
-              "RelativeToolTip": "MISA.Fresher.Web04\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-13T08:28:47.449Z",
+              "Title": "IFixedAssetService.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Service\\IFixedAssetService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Interface\\Service\\IFixedAssetService.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Service\\IFixedAssetService.cs",
+              "RelativeToolTip": "MISA.Fresher\\Interface\\Service\\IFixedAssetService.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAawBMAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T06:10:45.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MISAColumnName.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\MISAAttribute\\MISAColumnName.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\MISAAttribute\\MISAColumnName.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\MISAAttribute\\MISAColumnName.cs",
+              "RelativeToolTip": "MISA.Fresher\\MISAAttribute\\MISAColumnName.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T03:37:38.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IFixedAssetRepo.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Repository\\IFixedAssetRepo.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Interface\\Repository\\IFixedAssetRepo.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Repository\\IFixedAssetRepo.cs",
+              "RelativeToolTip": "MISA.Fresher\\Interface\\Repository\\IFixedAssetRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T09:53:28.76Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "FixedAssetRepository.cs",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Repository\\FixedAssetRepository.cs",
-              "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\Repository\\FixedAssetRepository.cs",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Repository\\FixedAssetRepository.cs",
-              "RelativeToolTip": "MISA.Fresher.Infrastructer\\Repository\\FixedAssetRepository.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAADwv8kAAAAaAAAAAAAAAA==",
+              "Title": "FixedAssetController.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Controllers\\FixedAssetController.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\Controllers\\FixedAssetController.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Controllers\\FixedAssetController.cs",
+              "RelativeToolTip": "MISA.Fresher.Web04\\Controllers\\FixedAssetController.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAowGgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T04:01:21.048Z"
+              "WhenOpened": "2026-01-18T09:48:24.185Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "IFixedAssetRepository.cs",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Interfaces\\IFixedAssetRepository.cs",
-              "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\Interfaces\\IFixedAssetRepository.cs",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Interfaces\\IFixedAssetRepository.cs",
-              "RelativeToolTip": "MISA.Fresher.Infrastructer\\Interfaces\\IFixedAssetRepository.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAABRAAAAAAAAAA==",
+              "Title": "IBaseService.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Service\\IBaseService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Interface\\Service\\IBaseService.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Service\\IBaseService.cs",
+              "RelativeToolTip": "MISA.Fresher\\Interface\\Service\\IBaseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T03:06:27.271Z"
+              "WhenOpened": "2026-01-18T09:58:27.547Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "MySqlConnectionFactory.cs",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Data\\MySqlConnectionFactory.cs",
-              "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\Data\\MySqlConnectionFactory.cs",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Data\\MySqlConnectionFactory.cs",
-              "RelativeToolTip": "MISA.Fresher.Infrastructer\\Data\\MySqlConnectionFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Title": "FixedAssetDepartmentService.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Service\\FixedAssetDepartmentService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Service\\FixedAssetDepartmentService.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Service\\FixedAssetDepartmentService.cs",
+              "RelativeToolTip": "MISA.Fresher\\Service\\FixedAssetDepartmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T03:58:41.842Z"
+              "WhenOpened": "2026-01-18T10:01:48.897Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "IDbConnectionFactory.cs",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Data\\IDbConnectionFactory.cs",
-              "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\Data\\IDbConnectionFactory.cs",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Data\\IDbConnectionFactory.cs",
-              "RelativeToolTip": "MISA.Fresher.Infrastructer\\Data\\IDbConnectionFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAAVAAAAAAAAAA==",
+              "Title": "BaseService.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Service\\BaseService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Service\\BaseService.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Service\\BaseService.cs",
+              "RelativeToolTip": "MISA.Fresher\\Service\\BaseService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T03:57:54.796Z"
+              "WhenOpened": "2026-01-25T06:06:20.172Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "FixedAssetType.cs",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Enities\\FixedAssetType.cs",
-              "RelativeDocumentMoniker": "MISA.Fresher\\Enities\\FixedAssetType.cs",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Enities\\FixedAssetType.cs",
-              "RelativeToolTip": "MISA.Fresher\\Enities\\FixedAssetType.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAuAAAAAAAAAA==",
+              "Title": "IBaseRepo.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Repository\\IBaseRepo.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Interface\\Repository\\IBaseRepo.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Repository\\IBaseRepo.cs",
+              "RelativeToolTip": "MISA.Fresher\\Interface\\Repository\\IBaseRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T03:02:57.063Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FixedAssetDepartment.cs",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Enities\\FixedAssetDepartment.cs",
-              "RelativeDocumentMoniker": "MISA.Fresher\\Enities\\FixedAssetDepartment.cs",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Enities\\FixedAssetDepartment.cs",
-              "RelativeToolTip": "MISA.Fresher\\Enities\\FixedAssetDepartment.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBoAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T03:02:40.123Z"
+              "WhenOpened": "2026-01-18T09:55:25.055Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "FixedAsset.cs",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Enities\\FixedAsset.cs",
-              "RelativeDocumentMoniker": "MISA.Fresher\\Enities\\FixedAsset.cs",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Enities\\FixedAsset.cs",
-              "RelativeToolTip": "MISA.Fresher\\Enities\\FixedAsset.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAADwvyIAAAAAAAAAAAAAAA==",
+              "Title": "BaseRepo.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Repository\\BaseRepo.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\Repository\\BaseRepo.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Repository\\BaseRepo.cs",
+              "RelativeToolTip": "MISA.Fresher.Infrastructer\\Repository\\BaseRepo.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAAGoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T02:55:29.643Z"
+              "WhenOpened": "2026-01-18T09:48:26.534Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Properties\\launchSettings.json",
-              "RelativeToolTip": "MISA.Fresher.Web04\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-13T09:18:07.26Z"
+              "Title": "FixedAssetDepartmentRepo.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Repository\\FixedAssetDepartmentRepo.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\Repository\\FixedAssetDepartmentRepo.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Repository\\FixedAssetDepartmentRepo.cs",
+              "RelativeToolTip": "MISA.Fresher.Infrastructer\\Repository\\FixedAssetDepartmentRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T09:14:49.309Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "FixedAssetService.cs",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Services\\FixedAssetService.cs",
-              "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\Services\\FixedAssetService.cs",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Services\\FixedAssetService.cs",
-              "RelativeToolTip": "MISA.Fresher.Infrastructer\\Services\\FixedAssetService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAQwA8AAAARAAAAAAAAAA==",
+              "Title": "FixedAssetTypeService.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Service\\FixedAssetTypeService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Service\\FixedAssetTypeService.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Service\\FixedAssetTypeService.cs",
+              "RelativeToolTip": "MISA.Fresher\\Service\\FixedAssetTypeService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T03:18:21.683Z"
+              "WhenOpened": "2026-01-15T06:32:14.954Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "IFixedAssetService.cs",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Services\\IFixedAssetService.cs",
-              "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\Services\\IFixedAssetService.cs",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Services\\IFixedAssetService.cs",
-              "RelativeToolTip": "MISA.Fresher.Infrastructer\\Services\\IFixedAssetService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "Title": "FixedAssetTypeRepo.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Repository\\FixedAssetTypeRepo.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\Repository\\FixedAssetTypeRepo.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Repository\\FixedAssetTypeRepo.cs",
+              "RelativeToolTip": "MISA.Fresher.Infrastructer\\Repository\\FixedAssetTypeRepo.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T03:11:29.27Z"
+              "WhenOpened": "2026-01-25T07:01:20.101Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "MISA.Fresher.Infrastructer.csproj",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj",
-              "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj",
-              "RelativeToolTip": "MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-13T03:10:54.54Z"
+              "Title": "IFixedAssetDepartmentRepo.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Repository\\IFixedAssetDepartmentRepo.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Interface\\Repository\\IFixedAssetDepartmentRepo.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Repository\\IFixedAssetDepartmentRepo.cs",
+              "RelativeToolTip": "MISA.Fresher\\Interface\\Repository\\IFixedAssetDepartmentRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T06:28:19.262Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "MISA.Fresher.Core.csproj",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\MISA.Fresher.Core.csproj",
-              "RelativeDocumentMoniker": "MISA.Fresher\\MISA.Fresher.Core.csproj",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\MISA.Fresher.Core.csproj",
-              "RelativeToolTip": "MISA.Fresher\\MISA.Fresher.Core.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-13T02:54:41.817Z"
+              "Title": "IFixedAssetDepartmentService.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Service\\IFixedAssetDepartmentService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Interface\\Service\\IFixedAssetDepartmentService.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Service\\IFixedAssetDepartmentService.cs",
+              "RelativeToolTip": "MISA.Fresher\\Interface\\Service\\IFixedAssetDepartmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T06:10:44.911Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Program.cs",
-              "RelativeDocumentMoniker": "MISA.Fresher\\Program.cs",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Program.cs",
-              "RelativeToolTip": "MISA.Fresher\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Title": "IFixedAssetTypeRepo.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Repository\\IFixedAssetTypeRepo.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Interface\\Repository\\IFixedAssetTypeRepo.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Repository\\IFixedAssetTypeRepo.cs",
+              "RelativeToolTip": "MISA.Fresher\\Interface\\Repository\\IFixedAssetTypeRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T15:31:58.243Z"
+              "WhenOpened": "2026-01-15T06:28:36.84Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "MISA.Fresher.Web04.Api",
-              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj",
-              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj",
-              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj",
-              "RelativeToolTip": "MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-12T15:31:14.159Z"
+              "Title": "IFixedAssetTypeService.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Service\\IFixedAssetTypeService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Interface\\Service\\IFixedAssetTypeService.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Interface\\Service\\IFixedAssetTypeService.cs",
+              "RelativeToolTip": "MISA.Fresher\\Interface\\Service\\IFixedAssetTypeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T06:10:47.029Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
+              "Title": "FixedAssetDuplicateDto.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetDuplicateDto.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\DTO\\FixedAssetDuplicateDto.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetDuplicateDto.cs",
+              "RelativeToolTip": "MISA.Fresher\\DTO\\FixedAssetDuplicateDto.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAswC0AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T06:15:27.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\Program.cs",
               "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\Program.cs",
@@ -325,7 +432,258 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
+              "Title": "FixedAssetUpdateDto.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetUpdateDto.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\DTO\\FixedAssetUpdateDto.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetUpdateDto.cs",
+              "RelativeToolTip": "MISA.Fresher\\DTO\\FixedAssetUpdateDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwDQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T06:49:43.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FixedAssetTableDto.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetTableDto.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\DTO\\FixedAssetTableDto.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetTableDto.cs",
+              "RelativeToolTip": "MISA.Fresher\\DTO\\FixedAssetTableDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T06:51:01.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "FixedAssetFilterDto.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetFilterDto.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\DTO\\FixedAssetFilterDto.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetFilterDto.cs",
+              "RelativeToolTip": "MISA.Fresher\\DTO\\FixedAssetFilterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T08:07:50.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FixedAssetDepartmentComboBoxDto.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetDepartmentComboBoxDto.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\DTO\\FixedAssetDepartmentComboBoxDto.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetDepartmentComboBoxDto.cs",
+              "RelativeToolTip": "MISA.Fresher\\DTO\\FixedAssetDepartmentComboBoxDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T04:25:08.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "FixedAssetCreateDto.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetCreateDto.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\DTO\\FixedAssetCreateDto.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetCreateDto.cs",
+              "RelativeToolTip": "MISA.Fresher\\DTO\\FixedAssetCreateDto.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAwDUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T06:49:06.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DeleteManyDto.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\DeleteManyDto.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\DTO\\DeleteManyDto.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\DeleteManyDto.cs",
+              "RelativeToolTip": "MISA.Fresher\\DTO\\DeleteManyDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T10:07:50.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Program.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\Program.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Program.cs",
+              "RelativeToolTip": "MISA.Fresher.Web04\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T02:50:18.553Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "FixedAssetType.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Enities\\FixedAssetType.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Enities\\FixedAssetType.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Enities\\FixedAssetType.cs",
+              "RelativeToolTip": "MISA.Fresher\\Enities\\FixedAssetType.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwCQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T03:02:57.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "FixedAssetDepartment.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Enities\\FixedAssetDepartment.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Enities\\FixedAssetDepartment.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Enities\\FixedAssetDepartment.cs",
+              "RelativeToolTip": "MISA.Fresher\\Enities\\FixedAssetDepartment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T03:02:40.123Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "FixedAsset.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Enities\\FixedAsset.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Enities\\FixedAsset.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Enities\\FixedAsset.cs",
+              "RelativeToolTip": "MISA.Fresher\\Enities\\FixedAsset.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwBYAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T02:55:29.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "PageResult.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\PageResult.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\DTO\\PageResult.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\PageResult.cs",
+              "RelativeToolTip": "MISA.Fresher\\DTO\\PageResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T08:08:21.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "FixedAssetDepartmentController.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Controllers\\FixedAssetDepartmentController.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\Controllers\\FixedAssetDepartmentController.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Controllers\\FixedAssetDepartmentController.cs",
+              "RelativeToolTip": "MISA.Fresher.Web04\\Controllers\\FixedAssetDepartmentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T06:40:14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "FixedAssetTypeController.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Controllers\\FixedAssetTypeController.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\Controllers\\FixedAssetTypeController.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Controllers\\FixedAssetTypeController.cs",
+              "RelativeToolTip": "MISA.Fresher.Web04\\Controllers\\FixedAssetTypeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwBYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T06:40:29.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Program.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\Program.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\Program.cs",
+              "RelativeToolTip": "MISA.Fresher\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T15:31:58.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "FixedAssetTypeComboBoxDto.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetTypeComboBoxDto.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\DTO\\FixedAssetTypeComboBoxDto.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\DTO\\FixedAssetTypeComboBoxDto.cs",
+              "RelativeToolTip": "MISA.Fresher\\DTO\\FixedAssetTypeComboBoxDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T04:26:24.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "MISATableName.cs",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\MISAAttribute\\MISATableName.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher\\MISAAttribute\\MISATableName.cs",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\MISAAttribute\\MISATableName.cs",
+              "RelativeToolTip": "MISA.Fresher\\MISAAttribute\\MISATableName.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T16:06:03.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "MISA.Fresher.Core.csproj",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\MISA.Fresher.Core.csproj",
+              "RelativeDocumentMoniker": "MISA.Fresher\\MISA.Fresher.Core.csproj",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher\\MISA.Fresher.Core.csproj",
+              "RelativeToolTip": "MISA.Fresher\\MISA.Fresher.Core.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-13T02:54:41.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "MISA.Fresher.Infrastructer.csproj",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj",
+              "RelativeDocumentMoniker": "MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj",
+              "RelativeToolTip": "MISA.Fresher.Infrastructer\\MISA.Fresher.Infrastructer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-13T03:10:54.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\appsettings.Development.json",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\appsettings.Development.json",
+              "RelativeToolTip": "MISA.Fresher.Web04\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-14T06:09:40.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\Properties\\launchSettings.json",
+              "RelativeToolTip": "MISA.Fresher.Web04\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-13T09:18:07.26Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "MISA.Fresher.Web04.Api",
+              "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj",
+              "RelativeDocumentMoniker": "MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj",
+              "ToolTip": "D:\\Homework-main\\WebEnd\\MISA.Web04\\MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj",
+              "RelativeToolTip": "MISA.Fresher.Web04\\MISA.Fresher.Web04.Api.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-12T15:31:14.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
               "Title": ".filenesting.json",
               "DocumentMoniker": "D:\\Homework-main\\WebEnd\\MISA.Web04\\.filenesting.json",
               "RelativeDocumentMoniker": ".filenesting.json",
