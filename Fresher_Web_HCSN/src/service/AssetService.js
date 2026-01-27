@@ -36,13 +36,33 @@ export const assetService = {
 
   // UPDATE
   async update(id, payload) {
-    const res = await http.put(`/api/v1/fixed-assets/Update:${id}`, payload)
+    const res = await http.put(`/api/v1/fixed-assets/Update/${id}`, payload)
+    return res.data
+  },
+
+  // CLONE
+  async clone(id, payload) {
+    const res = await http.put(`/api/v1/fixed-assets/${id}/clone`, payload)
     return res.data
   },
 
   // DELETE
   async remove(id) {
-    const res = await http.delete(`/api/v1/fixed-assets/Delete:${id}`)
+    const res = await http.delete(`/api/v1/fixed-assets/Delete/${id}`)
     return res.data
   },
+  //filter
+  async getFilter(params) {
+  const res = await http.get("/api/v1/fixed-assets/filter", { params })
+  return res.data
+},
+  async removebulk(ids) {
+    const payload = { ids: Array.isArray(ids) ? ids : [ids] }
+    const res = await http.delete(`/api/v1/fixed-assets/DeleteBulk`, { data: payload })
+    return res.data
+  },
+  async getNewCode() {
+    const res = await http.get("/api/v1/fixed-assets/new-code")
+    return res.data
+  }
 }

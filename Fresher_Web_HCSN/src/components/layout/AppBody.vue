@@ -2,8 +2,6 @@
 // Mô tả: Layout khung app (Header + Sidebar + Main content giống ảnh mẫu)
 // Ngày tạo: 2026-01-13
 import AppHeader from "./AppHeader.vue"
-import AppSidebar from "./appSideBar.vue"
-
 defineProps({
   // Tiêu đề hiển thị trên header
   title: { type: String, default: "Danh sách tài sản" },

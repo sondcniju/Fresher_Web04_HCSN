@@ -34,6 +34,7 @@ function onYearChange(e) {
         <select class="year-select" :value="props.year" @change="onYearChange">
           <option v-for="y in YEAR_OPTIONS" :key="y" :value="y">{{ y }}</option>
         </select>
+        <span class="icon icon-slc"></span>
       </div>
 
       <button class="icon-btn" type="button" title="Thông báo">
@@ -47,10 +48,14 @@ function onYearChange(e) {
       <button class="icon-btn" type="button" title="Trợ giúp">
         <span class="icon icon-help" aria-hidden="true"></span>
       </button>
+      <div>
+        <button class="icon-btn" type="button" title="Tài khoản">
+          <span class="icon icon-user" aria-hidden="true"></span>
+        </button>
+        <div class="icon icon-dropdown"></div>
+      </div>
 
-      <button class="avatar" type="button" title="Tài khoản">
-        <span class="avatar-dot" aria-hidden="true"></span>
-      </button>
+
     </div>
   </header>
 </template>
@@ -65,23 +70,27 @@ function onYearChange(e) {
   justify-content: space-between;
   padding: 0 16px 0 14px;
 }
+
 .title {
   margin: 0;
   font-size: 18px;
   font-weight: 700;
   color: #1b2b3a;
 }
+
 .right {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .org {
   font-size: 14px;
   color: #2b3c4d;
-  font-weight: 600;
+  font-weight: 500;
   margin-right: 6px;
 }
+
 .year-box {
   display: inline-flex;
   align-items: center;
@@ -90,11 +99,12 @@ function onYearChange(e) {
   border-radius: 3px;
   padding: 6px 10px;
 }
+
 .year-label {
   font-size: 13px;
   color: #1b2b3a;
-  font-weight: 600;
 }
+
 .year-select {
   appearance: none;
   border: none;
@@ -102,18 +112,11 @@ function onYearChange(e) {
   font-weight: 700;
   font-size: 13px;
   color: #1b2b3a;
-  padding-right: 16px;
   outline: none;
   cursor: pointer;
   position: relative;
 }
-.year-box::after {
-  content: "▼";
-  font-size: 12px;
-  color: #1b2b3a;
-  margin-left: -14px;
-  pointer-events: none;
-}
+
 
 /* Icon buttons and avatar */
 .icon {
@@ -124,60 +127,66 @@ function onYearChange(e) {
   background-repeat: no-repeat;
 }
 
+.icon-user {
+  background: url(/src/assets/icons/user.svg);
+  width: 18px;
+  height: 18px;
+  border-color: black;
+}
+
+.icon-dropdown {
+  background-position: -72px -338px;
+  width: 7px;
+  height: 5px;
+  margin-bottom: 5px;
+}
+
 .icon-update {
   background-position: -332px -109px;
   width: 16px;
   height: 20px;
 }
+
 .icon-settings {
   background-position: -199px -23px;
   width: 18px;
   height: 18px;
 }
+
 .icon-help {
   background-position: -67px -67px;
   width: 18px;
   height: 18px;
 }
-.icon-avatar {
-  background-position: -153px -153px;
-  width: 18px;
+.icon-slc {
+  background-position: -204px -332px;
+	width: 8px;
+	height: 16px;
 }
+
+
 .icon-btn {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  border: none;
+  border:  #d8dfe8;
   background: transparent;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
+
+
 .icon-btn:hover {
   background: #f2f5fa;
 }
+
 .icon-btn svg {
   width: 18px;
   height: 18px;
   fill: #1b2b3a;
   opacity: 0.9;
 }
-.avatar {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1px solid #d7e3ef;
-  background: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.avatar-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #2bb5ff, #1f6fff);
-}
+
 </style>

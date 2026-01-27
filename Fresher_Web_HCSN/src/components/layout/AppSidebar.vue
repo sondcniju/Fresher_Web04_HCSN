@@ -103,6 +103,7 @@ function toggleSidebar() {
   padding: 10px 10px;
   box-sizing: border-box;
   border-right: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: Roboto, Arial, sans-serif;
 }
 
 .sidebar.collapsed {
@@ -113,11 +114,13 @@ function toggleSidebar() {
 /* ============ Top / Brand ============ */
 .sidebar-top {
   padding: 2px 0 10px;
+  padding-left: 8px;
 }
 
 .brand {
   display: flex;
   align-items: center;
+  gap : 10px;
 }
 
 
@@ -267,6 +270,7 @@ function toggleSidebar() {
 .sidebar.collapsed .sidebar-top {
   display: flex;
   justify-content: center;
+  padding-left: 0;
 }
 
 .sidebar.collapsed .brand {
@@ -328,4 +332,3 @@ function toggleSidebar() {
   transform: rotate(180deg);
 }
 </style>
-
