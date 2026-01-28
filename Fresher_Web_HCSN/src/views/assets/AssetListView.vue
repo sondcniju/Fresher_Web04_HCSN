@@ -51,6 +51,8 @@ const deleteOkText = computed(() => (isDeleteInfoOnly.value ? "Đồng ý" : "X�
 const deleteCancelText = computed(() => (isDeleteInfoOnly.value ? "" : "Không"))
 
 const tableWrapRef = ref(null)
+const tableHeadRef = ref(null)
+const tableBodyRef = ref(null)
 const tbodyRef = ref(null)
 const contextMenu = reactive({
   visible: false,
@@ -65,11 +67,15 @@ const popupMode = ref("create") // "create" | "edit" | "clone"
 const editingAsset = ref(null)
 const editingId = ref(null)
 const cloneSourceId = ref(null)
+const popupSaveErrorMessage = ref("")
+const popupSaveErrorField = ref("")
 
 const isConfirmOpen = ref(false)
 const confirmConfig = ref(null)
 
 const toastVisible = ref(false)
+const toastMessage = ref("Lưu dữ liệu thành công")
+const toastType = ref("success")
 let toastTimer = null
 
 // ====== Helpers ======
@@ -96,12 +102,66 @@ function wait(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 // Hiển thị toast trong 2s
-function showToast() {
+function showToast(message = "Lưu dữ liệu thành công", type = "success") {
+  toastMessage.value = message
+  toastType.value = type
   toastVisible.value = true
   if (toastTimer) clearTimeout(toastTimer)
   toastTimer = window.setTimeout(() => {
     toastVisible.value = false
   }, 2000)
+}
+
+function clearPopupSaveError() {
+  popupSaveErrorMessage.value = ""
+  popupSaveErrorField.value = ""
+}
+
+function isDuplicateCodeError(err) {
+  const status = err?.response?.status
+  const data = err?.response?.data
+  const message = extractErrorMessage(err).toLowerCase()
+  const code = String(
+    data?.errorCode ??
+      data?.ErrorCode ??
+      data?.code ??
+      data?.Code ??
+      ""
+  ).toLowerCase()
+
+  return (
+    status === 409 ||
+    code.includes("duplicate") ||
+    message.includes("tồn tại") ||
+    message.includes("duplicate") ||
+    message.includes("exists")
+  )
+}
+
+function extractErrorMessage(err) {
+  const data = err?.response?.data
+  if (data?.errors && typeof data.errors === "object") {
+    const firstKey = Object.keys(data.errors)[0]
+    const firstVal = data.errors?.[firstKey]
+    if (Array.isArray(firstVal) && firstVal[0]) return String(firstVal[0])
+  }
+
+  const message = [
+    data?.userMsg,
+    data?.UserMsg,
+    data?.message,
+    data?.Message,
+    data?.error,
+    data?.Error,
+    data?.title,
+    data?.detail,
+    err?.message,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .trim()
+
+  return message || "Có lỗi xảy ra"
 }
 
 /**
@@ -251,7 +311,7 @@ async function loadAsset() {
     if (filterFn) {
       res = await filterFn(filterPayload)
     } else {
-      // fallback: n?u service getAsset() c?a b?n h? tr? query/paging th� truy?n payload
+      // fallback: nếu service getAsset() của bạn hỗ trợ query/paging thì truyền payload
       res = await assetService.getAsset(filterPayload)
     }
 
@@ -305,6 +365,7 @@ function openCreate() {
   editingAsset.value = null
   editingId.value = null
   cloneSourceId.value = null
+  clearPopupSaveError()
   isPopupOpen.value = true
 }
 
@@ -314,6 +375,7 @@ function openEdit(row) {
   editingId.value = row.id
   cloneSourceId.value = null
   editingAsset.value = row.__raw || row
+  clearPopupSaveError()
   isPopupOpen.value = true
 }
 // Mở popup nhân bản từ dòng
@@ -322,6 +384,7 @@ function openClone(row) {
   editingId.value = null
   cloneSourceId.value = row.id ?? row.fixedAssetId ?? row.__raw?.fixedAssetId ?? null
   editingAsset.value = row.__raw || row
+  clearPopupSaveError()
   isPopupOpen.value = true
 }
 
@@ -344,11 +407,23 @@ async function handleSave(payload) {
       await assetService.clone(id, payload)
     }
     isPopupOpen.value = false
+    clearPopupSaveError()
     showToast()
     await wait(2000)
     await loadAsset()
   } catch (e) {
     console.error("Save error:", e)
+    if (isDuplicateCodeError(e)) {
+      popupSaveErrorMessage.value = "Mã tài sản đã tồn tại"
+      popupSaveErrorField.value = "fixedAssetCode"
+      showToast("Mã tài sản đã tồn tại", "error")
+      return
+    }
+    if (e?.response?.status === 500) {
+      showToast("Mã tài sản đã tồn tại", "error")
+      return
+    }
+    showToast(extractErrorMessage(e), "error")
   }
 }
 
@@ -412,7 +487,7 @@ function handleDelete() {
   }
   isDeleteConfirmOpen.value = true
 }
-// ====== Backend d� filter + paging, frontend ch? render ======
+// ====== Backend dữ filter + paging, frontend render ======
 const filteredRows = computed(() => rows.value)
 const isEmpty = computed(() => filteredRows.value.length === 0)
 const selectedIdSet = computed(() => new Set(selectedIds.value))
@@ -422,7 +497,7 @@ const allChecked = computed(
 )
 const someChecked = computed(() => visibleIds.value.some((id) => selectedIdSet.value.has(id)))
 
-// ====== Totals (footer: t?ng theo d? li?u dang hi?n th?) ======
+// ====== Totals (footer: tổng theo dữ liệu đang hiển thị) ======
 const totalQty = computed(() => filteredRows.value.reduce((s, r) => s + (Number(r.qty) || 0), 0))
 const totalCost = computed(() => filteredRows.value.reduce((s, r) => s + (Number(r.cost) || 0), 0))
 const totalDep = computed(() => filteredRows.value.reduce((s, r) => s + (Number(r.dep) || 0), 0))
@@ -736,13 +811,32 @@ onBeforeUnmount(() => {
   window.removeEventListener("scroll", closeContextMenu, true)
   if (toastTimer) clearTimeout(toastTimer)
 })
+
+function syncHeadScroll() {
+  const head = tableHeadRef.value
+  const body = tableBodyRef.value
+  if (!head || !body) return
+  head.scrollLeft = body.scrollLeft
+}
+
+onMounted(() => {
+  if (tableBodyRef.value) {
+    tableBodyRef.value.addEventListener("scroll", syncHeadScroll, { passive: true })
+  }
+})
+
+onBeforeUnmount(() => {
+  if (tableBodyRef.value) {
+    tableBodyRef.value.removeEventListener("scroll", syncHeadScroll)
+  }
+})
 </script>
 
 <template>
   <section class="page">
-    <div v-if="toastVisible" class="toast" role="status" aria-live="polite">
-      <span class="toast-icon">OK</span>
-      <span>Lưu dữ liệu thành công</span>
+    <div v-if="toastVisible" class="toast" :class="{ error: toastType === 'error' }" role="status" aria-live="polite">
+      <span class="toast-icon">{{ toastType === 'error' ? '!' : '✓' }}</span>
+      <span>{{ toastMessage }}</span>
     </div>
     <!-- Filters + actions -->
     <div class="toolbar">
@@ -824,7 +918,7 @@ onBeforeUnmount(() => {
     <!-- Table -->
    <div class="table-wrap" ref="tableWrapRef" tabindex="0" @keydown="handleTableKeydown" @contextmenu.prevent>
   <!-- HEADER (không scroll) -->
-  <div class="table-head">
+  <div class="table-head" ref="tableHeadRef">
     <table class="asset-table" :style="{ minWidth: tableWidth + 'px' }">
       <colgroup>
         <col v-for="(w, i) in colWidths" :key="i" :style="{ width: w + 'px' }" />
@@ -832,7 +926,7 @@ onBeforeUnmount(() => {
 
       <thead>
         <tr>
-          <th class="th-center cell-checkbox">
+          <th class="th-center cell-checkbox sticky-left">
             <input class="chk" type="checkbox"
               :checked="allChecked"
               :indeterminate="someChecked && !allChecked"
@@ -853,7 +947,7 @@ onBeforeUnmount(() => {
           <th class="th-right">HM/KH lũy kế <span class="col-resizer" @mousedown="onResizeDown($event, 8)"></span></th>
           <th class="th-right">Giá trị còn lại <span class="col-resizer" @mousedown="onResizeDown($event, 9)"></span></th>
 
-          <th class="th-center">
+          <th class="th-center sticky-col">
             Chức năng
             <span class="col-resizer" @mousedown="onResizeDown($event, 10)"></span>
           </th>
@@ -863,7 +957,7 @@ onBeforeUnmount(() => {
   </div>
 
   <!-- BODY (scroll chỉ ở đây) -->
-  <div class="table-body">
+  <div class="table-body" ref="tableBodyRef">
     <table class="asset-table" :style="{ minWidth: tableWidth + 'px' }">
       <colgroup>
         <col v-for="(w, i) in colWidths" :key="i" :style="{ width: w + 'px' }" />
@@ -874,7 +968,7 @@ onBeforeUnmount(() => {
           :class="{ selected: r.id === selectedId || selectedIdSet.has(r.id) }"
           @click="selectRow(r.id, $event)"
           @contextmenu="openContextMenu($event, r)">
-          <td class="td-center cell-checkbox">
+          <td class="td-center cell-checkbox sticky-left">
             <input class="chk" type="checkbox" :checked="selectedIdSet.has(r.id)"
               @change="toggleRowSelection(r.id, $event)" @click.stop />
           </td>
@@ -954,8 +1048,6 @@ onBeforeUnmount(() => {
       <button class="context-item" type="button" @click="handleContextClone">Nhân bản</button>
       <button class="context-item danger" type="button" @click="handleContextDelete">Xóa</button>
     </div>
-
-
 
     <!-- Popup -->
     <AssetPopup v-model="isPopupOpen" :mode="popupMode" :asset="editingAsset" :departments="departments"
@@ -1469,6 +1561,20 @@ onBeforeUnmount(() => {
   z-index: 2;
 }
 
+/* Sticky cột checkbox (bên trái) */
+.sticky-left {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: inherit;
+  border-right: 1px solid #eef1f6;
+}
+
+.asset-table thead th.sticky-left {
+  z-index: 4;
+  border-right: 1px solid #e3e6ef;
+}
+
 /* Sticky c?t ch?c nang */
 .sticky-col {
   position: sticky;
@@ -1501,8 +1607,16 @@ onBeforeUnmount(() => {
   background: #d9f3ff;
 }
 
+.asset-table tbody tr.selected td.sticky-left {
+  background: #d9f3ff;
+}
+
 /* Hover row to highlight full line */
 .asset-table tbody tr:hover td {
+  background: #eef7ff;
+}
+
+.asset-table tbody tr:hover td.sticky-left {
   background: #eef7ff;
 }
 
@@ -1534,6 +1648,14 @@ onBeforeUnmount(() => {
   justify-content: center;
   font-size: 14px;
   font-weight: 700;
+}
+
+.toast.error {
+  border-color: #f1b0b7;
+}
+
+.toast.error .toast-icon {
+  background: #e53935;
 }
 .context-menu {
   position: fixed;

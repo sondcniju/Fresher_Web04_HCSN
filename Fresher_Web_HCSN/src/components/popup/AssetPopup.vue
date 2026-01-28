@@ -16,9 +16,11 @@ const props = defineProps({
 
   departments: { type: Array, default: () => [] },
   assetTypes: { type: Array, default: () => [] },
+  saveErrorMessage: { type: String, default: "" },
+  saveErrorField: { type: String, default: "" },
 })
 
-const emit = defineEmits(["update:modelValue", "save"])
+const emit = defineEmits(["update:modelValue", "save", "clear-save-error"])
 
 // ====== UI state: cảnh báo khi thoát + thông báo Lưu thành công ======
 // Ngày tạo: 2026-01-17
@@ -385,6 +387,10 @@ function closePopup() {
   emit("update:modelValue", false)
 }
 
+function clearSaveError() {
+  if (props.saveErrorMessage) emit("clear-save-error")
+}
+
 // Khi bấm X / Hủy / click ra ngoài
 const confirmConfig = ref(null)
 
@@ -549,6 +555,7 @@ watch(
   async (open) => {
     if (!open) return
     isConfirmOpen.value = false
+    clearSaveError()
 
     if (props.mode === "edit") {
       // edit: dữ liệu sẽ được fill từ watcher props.asset của bạn (như hiện tại)
@@ -631,11 +638,14 @@ function onSave() {
               <div class="row-label">Mã tài sản <span class="req">*</span></div>
               <div class="row-ctrl">
                 <input v-model="form.fixedAssetCode" class="ctl"
-                  :class="{ error: showError('fixedAssetCode') || codeLoadError }" type="text"
-                  :readonly="props.mode !== 'edit'" :disabled="isCodeLoading"
-                  @blur="markTouched('fixedAssetCode')" />
+                  :class="{ error: showError('fixedAssetCode') || codeLoadError || (props.saveErrorField === 'fixedAssetCode' && props.saveErrorMessage) }"
+                  type="text" :readonly="isCodeLoading" :disabled="isCodeLoading"
+                  @input="clearSaveError" @blur="markTouched('fixedAssetCode')" />
                 <div v-if="isCodeLoading" class="field-hint">Đang tạo mã tài sản…</div>
                 <div v-if="codeLoadError" class="field-error">{{ codeLoadError }}</div>
+                <div v-if="props.saveErrorField === 'fixedAssetCode' && props.saveErrorMessage" class="field-error">
+                  {{ props.saveErrorMessage }}
+                </div>
               </div>
             </div>
 
@@ -757,8 +767,8 @@ function onSave() {
                   :class="{ error: showError('fixedAssetQuantity') }" type="number" min="1" step="1"
                   @blur="markTouched('fixedAssetQuantity')" />
                 <div v-if="showError('fixedAssetQuantity')" class="field-error">
-                  <span class="field-error-label">{{ errors.fixedAssetQuantity?.label }}</span>
                   <span class="field-error-text">{{ errors.fixedAssetQuantity?.text }}</span>
+                  <span class="field-error-label">{{ errors.fixedAssetQuantity?.label }}</span>
                 </div>
               </div>
             </div>
@@ -769,8 +779,8 @@ function onSave() {
                 <input :value="costDisplay" class="ctl right" :class="{ error: showError('fixedAssetCost') }"
                   type="text" inputmode="numeric" @input="handleCostInput" @blur="markTouched('fixedAssetCost')" />
                 <div v-if="showError('fixedAssetCost')" class="field-error">
-                  <span class="field-error-label">{{ errors.fixedAssetCost?.label }}</span>
                   <span class="field-error-text">{{ errors.fixedAssetCost?.text }}</span>
+                  <span class="field-error-label">{{ errors.fixedAssetCost?.label }}</span>
                 </div>
               </div>
             </div>
@@ -782,8 +792,8 @@ function onSave() {
                   :class="{ error: showError('fixedAssetDepreciationRate') }" type="number" min="0" step="0.01"
                   @blur="markTouched('fixedAssetDepreciationRate')" />
                 <div v-if="showError('fixedAssetDepreciationRate')" class="field-error">
-                  <span class="field-error-label">{{ errors.fixedAssetDepreciationRate?.label }}</span>
                   <span class="field-error-text">{{ errors.fixedAssetDepreciationRate?.text }}</span>
+                  <span class="field-error-label">{{ errors.fixedAssetDepreciationRate?.label }}</span>
                 </div>
               </div>
             </div>
@@ -798,8 +808,8 @@ function onSave() {
                   :class="{ error: showError('fixedAssetPurchaseDate') }" type="date"
                   @blur="markTouched('fixedAssetPurchaseDate')" />
                 <div v-if="showError('fixedAssetPurchaseDate')" class="field-error">
-                  <span class="field-error-label">{{ errors.fixedAssetPurchaseDate?.label }}</span>
                   <span class="field-error-text">{{ errors.fixedAssetPurchaseDate?.text }}</span>
+                  <span class="field-error-label">{{ errors.fixedAssetPurchaseDate?.label }}</span>
                 </div>
               </div>
             </div>
@@ -811,8 +821,8 @@ function onSave() {
                   :class="{ error: showError('fixedAssetStartUsingDate') }" type="date"
                   @blur="markTouched('fixedAssetStartUsingDate')" />
                 <div v-if="showError('fixedAssetStartUsingDate')" class="field-error">
-                  <span class="field-error-label">{{ errors.fixedAssetStartUsingDate?.label }}</span>
                   <span class="field-error-text">{{ errors.fixedAssetStartUsingDate?.text }}</span>
+                  <span class="field-error-label">{{ errors.fixedAssetStartUsingDate?.label }}</span>
                 </div>
               </div>
             </div>
@@ -834,8 +844,8 @@ function onSave() {
                   :class="{ error: showError('fixedAssetUsingYear') }" type="number" min="0" step="1"
                   @blur="markTouched('fixedAssetUsingYear')" />
                 <div v-if="showError('fixedAssetUsingYear')" class="field-error">
-                  <span class="field-error-label">{{ errors.fixedAssetUsingYear?.label }}</span>
                   <span class="field-error-text">{{ errors.fixedAssetUsingYear?.text }}</span>
+                  <span class="field-error-label">{{ errors.fixedAssetUsingYear?.label }}</span>
                 </div>
               </div>
             </div>
@@ -845,8 +855,8 @@ function onSave() {
               <div class="row-ctrl">
                 <input :value="depreciationDisplay" class="ctl right" type="text" inputmode="numeric" readonly />
                 <div v-if="showError('fixedAssetDepreciationValueYear')" class="field-error">
-                  <span class="field-error-label">{{ errors.fixedAssetDepreciationValueYear?.label }}</span>
                   <span class="field-error-text">{{ errors.fixedAssetDepreciationValueYear?.text }}</span>
+                  <span class="field-error-label">{{ errors.fixedAssetDepreciationValueYear?.label }}</span>
                 </div>
               </div>
             </div>

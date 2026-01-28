@@ -24,7 +24,7 @@ function createAssetPopupValidation({ form, fieldLabels, errors, touched }) {
     const value = form[field]
     if (isFieldEmpty(value)) {
       const label = fieldLabels[field] || ""
-      errors[field] = { label, text: "400" }
+      errors[field] = { label, text: "Cần nhập thông tin " }
     } else {
       errors[field] = null
     }
@@ -55,7 +55,7 @@ function createAssetPopupValidation({ form, fieldLabels, errors, touched }) {
       if (diff > 0.0001) {
         errors.fixedAssetDepreciationRate = {
           label: "Tỷ lệ hao mòn",
-          text: "422",
+          text: "Tỷ lệ hao mòn không hợp lệ",
         }
         ok = false
       }
@@ -66,7 +66,7 @@ function createAssetPopupValidation({ form, fieldLabels, errors, touched }) {
     if (!Number.isNaN(cost) && !Number.isNaN(depreciationValueYear) && depreciationValueYear > cost) {
       errors.fixedAssetDepreciationValueYear = {
         label: "Hao mòn năm",
-        text: "422",
+        text: "Giá trị hao mòn năm không hợp lệ",
       }
       ok = false
     }

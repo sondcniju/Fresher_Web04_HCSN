@@ -1,10 +1,10 @@
 ﻿<script setup>
-// MÃ´ táº£: Sidebar máº·c Ä‘á»‹nh má»Ÿ rá»™ng, báº¥m Ä‘á»ƒ thu gá»n chá»‰ cÃ²n icon (giá»‘ng UI MISA QLTS)
-// NgÃ y táº¡o: 2026-01-13
-import { computed, ref } from "vue"
+// Mô tả: Sidebar mặc định mở rộng, bấm để thu gọn chỉ còn icon (giống UI MISA QLTS)
+// Ngafy tạo: 2026-01-13
+import { computed, onBeforeUnmount, onMounted, ref } from "vue"
 
 // Enum key menu (demo)
-// NgÃ y táº¡o enum: 2026-01-13
+// Ngày tạo enum: 2026-01-13
 const SidebarKey = Object.freeze({
   Overview: "overview",
   Asset: "asset",
@@ -18,7 +18,11 @@ const SidebarKey = Object.freeze({
 const activeKey = ref(SidebarKey.Asset)
 
 
-const isCollapsed = ref(false)
+const AUTO_COLLAPSE_WIDTH = 1024
+
+const isAutoCollapsed = ref(false)
+const userCollapsed = ref(false)
+const isCollapsed = computed(() => userCollapsed.value || isAutoCollapsed.value)
 
 
 const items = computed(() => [
@@ -37,8 +41,21 @@ function setActive(key) {
 
 // Toggle thu gọn/mở rộng
 function toggleSidebar() {
-  isCollapsed.value = !isCollapsed.value
+  userCollapsed.value = !userCollapsed.value
 }
+
+function updateAutoCollapse() {
+  isAutoCollapsed.value = window.innerWidth <= AUTO_COLLAPSE_WIDTH
+}
+
+onMounted(() => {
+  updateAutoCollapse()
+  window.addEventListener("resize", updateAutoCollapse)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", updateAutoCollapse)
+})
 </script>
 
 <template>
@@ -85,7 +102,7 @@ function toggleSidebar() {
       <button class="collapse-btn" type="button" :title="isCollapsed ? 'Mở rộng' : 'Thu gọn'" @click="toggleSidebar">
         <svg viewBox="0 0 24 24" aria-hidden="true" :class="{ rotate: isCollapsed }">
           <path d="M15 18 9 12l6-6" />
-        </svg>
+        </svg> 
       </button>
     </div>
   </aside>
